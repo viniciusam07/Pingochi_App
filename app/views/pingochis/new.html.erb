@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>Create your Pingochi</h1>
+  <%= simple_form_for @pingochi do |f| %>
+    <%= f.input :name, wrapper_html: { class: 'name' }, required: true %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>
