@@ -10,4 +10,14 @@ namespace :pingochi do
     pingochi.save!
     end
   end
+
+  desc "Set energy to all pingochis"
+  task update_energy: :environment do
+    Pingochi.all.each do |pingochi|
+      if pingochi.energy >= 10
+        pingochi.energy -= 1
+      end
+    pingochi.save!
+    end
+  end
 end
