@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :pingochis, only: [:new, :create, :show] do
     patch 'slap', to: 'pingochis#slap'
     patch 'uti', to: 'pingochis#uti'
-    patch 'feed', to: 'pingoshi#feed'
-    patch 'sleep', to: 'pingoshi#sleep'
+    patch 'feed', to: 'pingoshis#feed'
+    patch 'sleep', to: 'pingoshis#sleep'
   end
 end
