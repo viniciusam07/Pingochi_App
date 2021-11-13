@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_11_13_190427) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "slept_at"
+    t.string "specie"
     t.datetime "uti_at"
     t.index ["user_id"], name: "index_pingochis_on_user_id"
   end

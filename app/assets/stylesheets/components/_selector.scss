@@ -1,0 +1,56 @@
+
+.specie-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.specie-item {
+  flex: 0 0 30%;
+  background-image: url("https://topbiologia.com/wp-content/uploads/2015/01/pinguim-rei.jpg");
+  background-size: cover;
+  margin-bottom: 18px;
+}
+.specie-selector {
+  position: absolute;
+  transform: scale(0);
+}
+.specie-selector + label {
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 12px;
+  text-align: left;
+  padding: 10px 10px 30px 10px;
+  border: 1px solid #EAEAEA;
+  border-radius: 4px;
+
+}
+.specie-selector:checked + label {
+  color: white !important;
+  background-color: #7E73FF;
+}
+#pingochi_specie_pinguim-rei{
+
+}
+#pingochi_specie_pinguim-rei+ label {
+  color: white;
+}
+#pingochi_specie_pinguim-rei:checked + label {
+  background-color: #FD1015;
+  border-color: #FD1015;
+}
+#pingochi_specie_javascript + label {
+  color: #FFC65A;
+}
+#pingochi_specie_javascript:checked + label {
+  background-color: #FFC65A;
+  border-color: #FFC65A;
+}
+#pingochi_specie_css + label {
+  color: #62DDF5;
+}
+#pingochi_specie_css:checked + label {
+  background-color: #62DDF5;
+  border-color: #62DDF5;
+}
