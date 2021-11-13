@@ -26,7 +26,12 @@ class Pingochi < ApplicationRecord
 
   def sleep
     self.energy = 100
+    self.slept_at = DateTime.current
     self.save
+  end
+
+  def sleep?
+    self.slept_at.present? && self.slept_at > DateTime.current - 10.minutes
   end
 
   private
