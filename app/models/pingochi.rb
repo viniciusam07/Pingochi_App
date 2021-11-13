@@ -18,6 +18,9 @@ class Pingochi < ApplicationRecord
 
   before_create :set_nft
 
+  SPECIES = ["Pinguim Rei", "Pinguim Macaroni", "Pinguim Imperador", "Pinguim de Humboldt", "Pinguim de Barbicha", "Pinguim das Snares", "Pinguim de Galápagos", "Pinguim de Adélia", "Pinguim Azul"]
+
+
 
   def slap
     self.energy -= 10
