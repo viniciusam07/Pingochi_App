@@ -31,6 +31,7 @@ class PingochisController < ApplicationController
     # o alerta da ação será com JS
   end
 
+
   private
 
   def pingochi_params
