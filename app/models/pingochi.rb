@@ -25,6 +25,14 @@ class Pingochi < ApplicationRecord
   def slap
     self.energy -= 10
     self.save
+    if @pingochi.energy = 0
+      @pingochi.uti
+    end
+  end
+
+  def feed
+    self.energy += 20
+    self.save
   end
 
   def sleep
@@ -37,15 +45,22 @@ class Pingochi < ApplicationRecord
     self.slept_at.present? && self.slept_at > DateTime.current - 10.minutes
   end
 
+  def uti
+    if @pingochi.energy = 0
+      self.uti_at = DateTime.current
+      self.save
+    end
+  end
+
+  def uti?
+    self.uti_at.present? && self.uti_at > DateTime.current - 10.minutes
+  end
+
   private
 
   def set_nft
     self.nft = Time.now.to_i.to_s
   end
-
-
-
-
 end
 
 # acoes que envolvem dois pingochis o seu e o de um amigo deve usar o current_user.pingochi e o @pingochis
