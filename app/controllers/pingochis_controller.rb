@@ -15,8 +15,12 @@ class PingochisController < ApplicationController
     end
   end
 
-  def slap
+  def show
     @pingochi = Pingochi.find(params[:id])
+  end
+
+  def slap
+    @pingochi = Pingochi.find(params[:pingochi_id])
     @pingochi.slap
     redirect_to pingochi_path(@pingochi)
     flash[:notice] = 'Toma essa'
@@ -24,7 +28,7 @@ class PingochisController < ApplicationController
   end
 
   def feed
-    @pingochi = Pingochi.find(params[:id])
+    @pingochi = Pingochi.find(params[:pingoch_id])
     @pingochi.feed
     redirect_to pingochi_path(@pingochi)
     flash[:notice] = 'Alimentado! Energia: +20'
@@ -32,7 +36,7 @@ class PingochisController < ApplicationController
   end
 
   def sleep
-    @pingochi = Pingochi.find(params[:id])
+    @pingochi = Pingochi.find(params[:pingochi_id])
     @pingochi.sleep
     redirect_to pingochi_path(@pingochi)
     flash[:notice] = 'ZZzZzZzZzZz'
