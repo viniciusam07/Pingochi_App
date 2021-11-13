@@ -24,6 +24,11 @@ class Pingochi < ApplicationRecord
     self.save
   end
 
+  def feed
+    self.energy += 20
+    self.save
+  end
+
   def sleep
     self.energy = 100
     self.slept_at = DateTime.current
