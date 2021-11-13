@@ -18,16 +18,31 @@ class Pingochi < ApplicationRecord
 
   before_create :set_nft
 
+
+  def slap
+    self.energy -= 10
+    self.save
+  end
+
+  def sleep
+    self.energy = 100
+    self.slept_at = DateTime.current
+    self.save
+  end
+
+  def sleep?
+    self.slept_at.present? && self.slept_at > DateTime.current - 10.minutes
+  end
+
   private
 
   def set_nft
     self.nft = Time.now.to_i.to_s
   end
 
-  def slap
-    self.energy -= 10
-    self.save
-  end
+
+
+
 end
 
 # acoes que envolvem dois pingochis o seu e o de um amigo deve usar o current_user.pingochi e o @pingochis
