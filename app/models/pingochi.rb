@@ -22,6 +22,9 @@ class Pingochi < ApplicationRecord
   def slap
     self.energy -= 10
     self.save
+    if @pingochi.energy = 0
+      @pingochi.uti
+    end
   end
 
   def feed
@@ -37,6 +40,17 @@ class Pingochi < ApplicationRecord
 
   def sleep?
     self.slept_at.present? && self.slept_at > DateTime.current - 10.minutes
+  end
+
+  def uti
+    if @pingochi.energy = 0
+      self.uti_at = DateTime.current
+      self.save
+    end
+  end
+
+  def uti?
+    self.uti_at.present? && self.uti_at > DateTime.current - 10.minutes
   end
 
   private
