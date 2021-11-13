@@ -24,14 +24,14 @@ class PingochisController < ApplicationController
     @pingochi.slap
     redirect_to pingochi_path(@pingochi)
     flash[:notice] = 'Toma essa'
-    # o alerta da ação será com JS
+    # o alerta da ação será com JSSS
   end
 
   def feed
     @pingochi = Pingochi.find(params[:pingoch_id])
     @pingochi.feed
     redirect_to pingochi_path(@pingochi)
-    flash[:notice] = 'Alimentado! Energia: +10'
+    flash[:notice] = 'Alimentado! Energia: +20'
     # o alerta da ação será com JS
   end
 
@@ -40,6 +40,14 @@ class PingochisController < ApplicationController
     @pingochi.sleep
     redirect_to pingochi_path(@pingochi)
     flash[:notice] = 'ZZzZzZzZzZz'
+    # o alerta da ação será com JS
+  end
+
+  def uti
+    @pingochi = Pingochi.find(params[:id])
+    @pingochi.uti
+    redirect_to pingochi_path(@pingochi)
+    flash[:notice] = "Seu Pingochi chegou no limite e precisa de atendimento especial"
     # o alerta da ação será com JS
   end
 
