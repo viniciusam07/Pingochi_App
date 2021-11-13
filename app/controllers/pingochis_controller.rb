@@ -31,6 +31,14 @@ class PingochisController < ApplicationController
     # o alerta da ação será com JS
   end
 
+  def sleep
+    @pingochi = Pingochi.find(params[:id])
+    @pingochi.sleep
+    redirect_to pingochi_path(@pingochi)
+    flash[:notice] = 'ZZzZzZzZzZz'
+    # o alerta da ação será com JS
+  end
+
   private
 
   def pingochi_params
