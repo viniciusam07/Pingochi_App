@@ -39,10 +39,6 @@ class Pingochi < ApplicationRecord
   def set_nft
     self.nft = Time.now.to_i.to_s
   end
-
-
-
-
 end
 
 # acoes que envolvem dois pingochis o seu e o de um amigo deve usar o current_user.pingochi e o @pingochis
