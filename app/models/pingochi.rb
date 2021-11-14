@@ -25,8 +25,8 @@ class Pingochi < ApplicationRecord
   def slap
     self.energy -= 10
     self.save
-    if @pingochi.energy = 0
-      @pingochi.uti
+    if self.energy.zero?
+      self.uti
     end
   end
 
@@ -46,7 +46,7 @@ class Pingochi < ApplicationRecord
   end
 
   def uti
-    if @pingochi.energy = 0
+    if self.energy.zero?
       self.uti_at = DateTime.current
       self.save
     end
