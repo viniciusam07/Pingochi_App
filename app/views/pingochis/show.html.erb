@@ -1,3 +1,26 @@
 <%=@pingochi.name%>
 <%=link_to "slap", pingochi_slap_path(@pingochi), class: "btn btn-primary", method: :patch%>
 # criar aqui novos "link_to"
+
+<div class="container">
+  <div class="card pixel-borders">
+    <h3>General Information</h3>
+      <p>Name: <%=@pingochi.name%></p>
+      <p>Specie: <%=@pingochi.specie%></p>
+      <p>Gender: <%=@pingochi.gender%></p>
+      <p>NFT Chain: <%=@pingochi.nft%></p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card">
+    <h3>Pingochi Status</h3>
+      <p>Age: <%=@pingochi.age%></p>
+      <p>Energy: <%=@pingochi.energy%></p>
+      <p>Live: <%=@pingochi.live%></p>
+      <p>Slepping: <%=@pingochi.sleep?%></p>
+      <p>Last Sleep: <%=@pingochi.slept_at%></p>
+      <p>UTI now?: <%=@pingochi.uti?%></p>
+      <p>Last UTI: <%=@pingochi.uti_at%></p>
+  </div>
+</div>
