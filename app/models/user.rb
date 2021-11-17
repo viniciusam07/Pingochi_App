@@ -4,5 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :pingochis
+  has_many :pingochis, dependent: :destroy
+  has_one :wallet, dependent: :destroy
+
+  after_create :create_wallet
+
+  def create_wallet
+    Wallet.create(user: self)
+  end
 end
