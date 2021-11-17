@@ -28,7 +28,7 @@ class PingochisController < ApplicationController
   end
 
   def feed
-    @pingochi = Pingochi.find(params[:pingoch_id])
+    @pingochi = Pingochi.find(params[:pingochi_id])
     @pingochi.feed
     redirect_to pingochi_path(@pingochi)
     flash[:notice] = 'Alimentado! Energia: +20'
