@@ -54,6 +54,6 @@ class PingochisController < ApplicationController
   private
 
   def pingochi_params
-    params.require(:pingochi).permit(:name)
+    params.require(:pingochi).permit(:name, :specie)
   end
 end

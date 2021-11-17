@@ -1,17 +1,26 @@
 <div class="container">
   <h1>Create your Pingochi</h1>
+  
   <%= simple_form_for @pingochi do |f| %>
     <%= f.input :name, wrapper_html: { class: 'name' }, required: true %>
 
-    <%= f.input :specie,
+
+
+
+
+
+      <%= f.input :specie,
             as: :radio_buttons,
             collection_wrapper_tag: 'div',
             collection_wrapper_class: 'specie-wrapper',
             item_wrapper_class: 'specie-item',
             input_html: {class: 'specie-selector'},
+            #collection: Pingochi::SPECIES.map { |specie| [[image_tag("/assets/images/pinguim-azul.jpg"), specie] },
+
             collection: Pingochi::SPECIES,
             required:true %>
-       <%#=image_tag "pinguim-rei"%>
+
+
     <%= f.button :submit, class: "btn btn-primary" %>
-  <% end %>
+    <%end%>
 </div>
