@@ -1,0 +1,10 @@
+<div class="nes-container with-title is-centered">
+  <% if @pingochi.age <= 1%>
+    <%= image_tag "egg.jpg" %>
+  <% elsif @pingochi.age.between?(2, 4)%>
+    # Chick Pingochi
+    <%= image_tag "pingochi_stay_animation.gif" %>
+  <% elsif @pingochi.age.between?(5, 10)%>
+    <%= "Pingochi is a Adult" %>
+  <% end  %>
+</div>
