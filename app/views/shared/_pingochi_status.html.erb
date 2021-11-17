@@ -1,0 +1,19 @@
+<div class="nes-container with-title ">
+  <p class="title">Pingochi Status</p>
+    <p>Age: <%=@pingochi.age%></p>
+    <p>Energy:</p>
+      <% if @pingochi.energy >= 80  %>
+        <progress class="nes-progress is-primary" value=<%=@pingochi.energy%> max="100"></progress>
+      <% elsif @pingochi.energy.between?(50, 70)  %>
+        <progress class="nes-progress is-success" value=<%=@pingochi.energy%> max="100"></progress>
+      <% elsif @pingochi.energy.between?(20, 40)  %>
+        <progress class="nes-progress is-warning" value=<%=@pingochi.energy%> max="100"></progress>
+      <% elsif @pingochi.energy.between?(0, 10)  %>
+        <progress class="nes-progress is-error" value=<%=@pingochi.energy%> max="100"></progress>
+      <% end %>
+    <p>Live: <%=@pingochi.live%></p>
+    <p>Slepping: <%=@pingochi.sleep?%></p>
+    <p>Last Sleep: <%=@pingochi.slept_at%></p>
+    <p>UTI now?: <%=@pingochi.uti?%></p>
+    <p>Last UTI: <%=@pingochi.uti_at%></p>
+</div>
