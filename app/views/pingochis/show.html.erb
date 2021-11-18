@@ -1,31 +1,26 @@
-<div class="container">
-  <div class="row">
-    <div class="col-lg-5 col-md-5 col-sm-6">
-      <%=link_to "slap", pingochi_slap_path(@pingochi), class: "nes-btn is-warning", method: :patch%>
-      # criar aqui novos "link_to"
-    </div>
-  </div>
-</div>
 
 <div class="container">
-  <div class="col-lg-7 col-md-7 col-sm-6">
-    <div class="nes-container with-title">
-      <p class="title">Pingochi Infos</p>
-        <p>Name: <%=@pingochi.name%></p>
-        <p>Specie: <%=@pingochi.specie%></p>
-        <p>Gender: <%=@pingochi.gender%></p>
-        <p>NFT Chain: <%=@pingochi.nft%></p>
+  <div class="row">
+
+    <div class="col-3">
+      <div>
+        <%= render 'shared/menu_actions' %>
+      </div>
     </div>
-    <div class="nes-container with-title ">
-      <p class="title">Pingochi Status</p>
-        <p>Age: <%=@pingochi.age%></p>
-        <p>Energy:</p>
-          <progress class="nes-progress is-primary" value=<%=@pingochi.energy%> max="100"></progress>
-        <p>Live: <%=@pingochi.live%></p>
-        <p>Slepping: <%=@pingochi.sleep?%></p>
-        <p>Last Sleep: <%=@pingochi.slept_at%></p>
-        <p>UTI now?: <%=@pingochi.uti?%></p>
-        <p>Last UTI: <%=@pingochi.uti_at%></p>
+
+    <div class="col-4">
+      <p class="title">Pingochi Animation</p>
+      <%= render 'shared/pingochi_animation' %>
     </div>
+
+    <div class="col-5">
+      <div>
+        <%= render 'shared/pingochi_info' %>
+      </div>
+      <div>
+        <%= render 'shared/pingochi_status' %>
+      </div>
+    </div>
+
   </div>
 </div>
