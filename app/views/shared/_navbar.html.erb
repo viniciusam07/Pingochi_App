@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <%= image_tag "Pingochi_logo.png", style: 'height:100%;width:25%;' %>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,8 +17,11 @@
         <li class="nav-item">
           <%= link_to "Messages", "#", class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= "Wallet: #{current_user.wallet.fishcoin_amount}" %>
+        <li>
+          <a href="#" class="nes-badge is-icon ">
+            <span class="is-warning"><i class="nes-icon coin is-small"></i></span>
+            <span class="is-primary"><%=current_user.wallet.fishcoin_amount%></span>
+          </a>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
