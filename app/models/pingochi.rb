@@ -32,7 +32,7 @@ class Pingochi < ApplicationRecord
     fishcoin_collected = rand(1..10).to_i
     old_balance = user.wallet.fishcoin_amount.to_i
     new_balance = old_balance + fishcoin_collected
-    new_balance.self.current_user.wallet.update
+    Wallet.update(fishcoin_amount: new_balance)
   end
 
   def feed

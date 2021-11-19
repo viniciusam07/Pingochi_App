@@ -31,7 +31,7 @@ class PingochisController < ApplicationController
     @pingochi = Pingochi.find(params[:pingochi_id])
     @pingochi.fish
     redirect_to pingochi_path(@pingochi)
-    flash[:notice] = 'Fishing'
+    flash[:notice] = 'Your Pingochi just fish more fishcoins!!!'
     # o alerta da ação será com JSSS
   end
 
