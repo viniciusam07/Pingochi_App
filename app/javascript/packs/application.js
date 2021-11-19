@@ -26,8 +26,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import "nes.css/css/nes.min.css";
-import Swal from 'sweetalert2'
-window.Swal = Swal;
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
