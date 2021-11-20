@@ -25,14 +25,19 @@ class Pingochi < ApplicationRecord
 
   SPECIES = ["Pinguim Rei", "Pinguim Macaroni", "Pinguim Imperador", "Pinguim de Humboldt", "Pinguim de Barbicha", "Pinguim das Snares", "Pinguim de Galápagos", "Pinguim de Adélia", "Pinguim Azul"]
 
-
-
   def slap
     self.energy -= 10
     self.save
     if self.energy.zero?
       self.uti
     end
+  end
+
+  def fish
+    fishcoin_collected = rand(1..10).to_i
+    old_balance = user.wallet.fishcoin_amount.to_i
+    new_balance = old_balance + fishcoin_collected
+    Wallet.update(fishcoin_amount: new_balance)
   end
 
   def feed

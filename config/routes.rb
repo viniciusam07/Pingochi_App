@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     patch 'uti', to: 'pingochis#uti'
     patch 'feed', to: 'pingochis#feed'
     patch 'sleep', to: 'pingochis#sleep'
+    patch 'fish', to: 'pingochis#fish'
   end
 end
