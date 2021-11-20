@@ -15,6 +15,11 @@ class PingochisController < ApplicationController
     end
   end
 
+  def edit
+    @pingochi = Pingochi.find(params[:id])
+    @items = Item.all
+  end
+
   def show
     @pingochi = Pingochi.find(params[:id])
   end
@@ -58,6 +63,8 @@ class PingochisController < ApplicationController
     flash[:notice] = "Seu Pingochi chegou no limite e precisa de atendimento especial"
     # o alerta da ação será com JS
   end
+
+
 
   private
 

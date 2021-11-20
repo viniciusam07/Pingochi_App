@@ -1,5 +1,6 @@
 class Pingochi < ApplicationRecord
   belongs_to :user
+  #has_one :item
 
   # Cannot create a new `Pingochi` without a `name`
   validates :name, presence: true
@@ -17,6 +18,10 @@ class Pingochi < ApplicationRecord
   validates :energy, numericality: { only_integer: true, in: %w(0..100) }
 
   before_create :set_nft
+
+  after_create :set_inventory
+
+  #before_create :set_gender
 
   SPECIES = ["Pinguim Rei", "Pinguim Macaroni", "Pinguim Imperador", "Pinguim de Humboldt", "Pinguim de Barbicha", "Pinguim das Snares", "Pinguim de Galápagos", "Pinguim de Adélia", "Pinguim Azul"]
 
@@ -66,7 +71,18 @@ class Pingochi < ApplicationRecord
   def set_nft
     self.nft = Time.now.to_i.to_s
   end
+
+  def set_inventory
+    @inventory = Inventory.new
+    @inventory.pingochi_id = self.id
+    @inventory.save
+  end
+
+  def set_gender
+    self.gender = %w(male female).sample
+  end
 end
+
 
 # acoes que envolvem dois pingochis o seu e o de um amigo deve usar o current_user.pingochi e o @pingochis
 # se eu estiver na pagina de show não mostrar botao na pagina de show para acoes que envolvam o pingochi do amigo
