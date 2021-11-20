@@ -40,6 +40,14 @@ class PingochisController < ApplicationController
     # o alerta da ação será com JSSS
   end
 
+  def buy
+    @pingochi = Pingochi.find(params[:pingochi_id])
+    @pingochi.buy
+    redirect_to pingochi_path(@pingochi)
+    flash[:notice] = 'Your Pingochi just fish more fishcoins!!!'
+    # o alerta da ação será com JSSS
+  end
+
   def feed
     @pingochi = Pingochi.find(params[:pingochi_id])
     @pingochi.feed

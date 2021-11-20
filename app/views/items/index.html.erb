@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Welcome to Pingochi Wagon Market</h1>
+  <h1>Welcome to Pingochi <%= @pingochi.name %> Wagon Market</h1>
   <p><%= "We have #{@items.count} for sale!" %></p>
 </div>
 
@@ -13,6 +13,10 @@
           <p>NFT:<%= item.nft %></p>
           <p>Price:<%= "#{item.value} fishcoins" %></p>
           <p>Category:<%= item.category.name %></p>
+          <%= simple_form_for [@pingochi, @inventory] do |f| %>
+            <%= f.hidden_field :item_id, value: item.id %>
+            <%= f.submit 'Buy', class: "nes-btn is-error" %>
+          <% end %>
         </div>
       </div>
     <% end %>
