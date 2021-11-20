@@ -23,3 +23,14 @@
     background-position: -1472px;
   }
 }
+
+.pingochi-avatar {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  &.selected {
+    border: 2px;
+    border-color: red;
+    border-style: solid;
+  }
+}

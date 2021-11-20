@@ -26,6 +26,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import { initSweetalert } from '../plugins/init_sweetalert';
+import { speciesSelector } from '../plugins/species_selector';
 
 initSweetalert('#sweet-alert-demo', {
   title: "A nice alert",
@@ -39,4 +40,5 @@ initSweetalert('#sweet-alert-demo', {
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  speciesSelector();
 });

@@ -6,10 +6,19 @@
 
 
 
+    <div class="row">
+      <% Pingochi::SPECIES.each do |specie|%>
+        <div class="col-4 species" data-specie="<%=specie%>">
+          <h4> <%= specie %> </h4>
+          <%=image_tag "#{specie.downcase.gsub(' ','-')}.jpg", class: "pingochi-avatar nes-avatar is-rounded is-medium pixelated"%>
+
+        </div>
 
 
-
-      <%= f.input :specie,
+      <%end%>
+    </div>
+    <%=f.input :specie, as: :hidden%>
+      <%#= f.input :specie,
             as: :radio_buttons,
             collection_wrapper_tag: 'div',
             collection_wrapper_class: 'specie-wrapper',

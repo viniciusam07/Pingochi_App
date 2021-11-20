@@ -23,7 +23,7 @@ class Pingochi < ApplicationRecord
 
   #before_create :set_gender
 
-  SPECIES = ["Pinguim Rei", "Pinguim Macaroni", "Pinguim Imperador", "Pinguim de Humboldt", "Pinguim de Barbicha", "Pinguim das Snares", "Pinguim de Galápagos", "Pinguim de Adélia", "Pinguim Azul"]
+  SPECIES = ["King Penguin", "Humboldt Penguin", "Emperor Penguin", "Blue Penguin", "Adelie Penguin", "Yellow eyed Penguin"]
 
   def slap
     self.energy -= 10
