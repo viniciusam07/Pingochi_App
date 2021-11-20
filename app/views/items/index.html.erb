@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Welcome to Pingochi Wagon Market</h1>
+  <p><%= "We have #{@items.count} for sale!" %></p>
+</div>
+
+<div class="container">
+  <div class = "cards">
+    <% @items.each do |item| %>
+      <div class="card-category nes-container is-rounded">
+        <div>
+          <p>Item Name:<%= item.name %></p>
+          <p>Description:<%= item.description %></p>
+          <p>NFT:<%= item.nft %></p>
+          <p>Price:<%= "#{item.value} fishcoins" %></p>
+          <p>Category:<%= item.category.name %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
