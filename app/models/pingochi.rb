@@ -21,8 +21,6 @@ class Pingochi < ApplicationRecord
 
   after_create :set_inventory
 
-  #before_create :set_gender
-
   SPECIES = ["Pinguim Rei", "Pinguim Macaroni", "Pinguim Imperador", "Pinguim de Humboldt", "Pinguim de Barbicha", "Pinguim das Snares", "Pinguim de Galápagos", "Pinguim de Adélia", "Pinguim Azul"]
 
   def slap

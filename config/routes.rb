@@ -8,5 +8,5 @@ Rails.application.routes.draw do
     patch 'sleep', to: 'pingochis#sleep'
     patch 'fish', to: 'pingochis#fish'
   end
-  resources :items, only: [:show]
+  resources :items, only: [:index, :show]
 end

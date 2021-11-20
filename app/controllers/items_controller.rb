@@ -1,8 +1,8 @@
-class ItensController < ApplicationController
+class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-   @itens = Item.all
+    @items = Item.all
   end
 
   def show
@@ -10,16 +10,13 @@ class ItensController < ApplicationController
   end
 
   def new
-    @item= Itens.new
+    @item = Item.new
   end
 
   def create
-    @itens = Item.new(item_params)
-    @itens.user_id = current_user.id
-
-
+    @items = Item.new(items_params)
+    @items.user_id = current_user.id
     @item.save
-
     redirect_to item_path(@item)
   end
 
@@ -28,13 +25,13 @@ class ItensController < ApplicationController
     @item = Item.find(params[:id])
     @item.destroy
 
-    redirect_to itens_path
+    redirect_to items_path
   end
 
   private
 
-  def itens_params
-    params.require(:itens).permit(:name, :description, :tags, :category_id, :nft, :value, photo: [])
+  def items_params
+    params.require(:item).permit(:name, :description, :tags, :category_id, :nft, :value, photo: [])
   end
 
 end

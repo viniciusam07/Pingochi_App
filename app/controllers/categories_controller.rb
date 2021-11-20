@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: [:show]
 
   def show
-    @itens = Item.where(category_id: params[:id])
+    @items = Item.where(category_id: params[:id])
   end
 
   private
