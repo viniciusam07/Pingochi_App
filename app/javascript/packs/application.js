@@ -25,7 +25,6 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import "nes.css/css/nes.min.css";
 import { initSweetalert } from '../plugins/init_sweetalert';
 
 initSweetalert('#sweet-alert-demo', {
