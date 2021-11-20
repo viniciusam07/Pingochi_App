@@ -34,7 +34,7 @@ class ItensController < ApplicationController
   private
 
   def itens_params
-    params.require(:itens).permit(:name, :description, :tags, :category_id, photos: [])
+    params.require(:itens).permit(:name, :description, :tags, :category_id, :nft, :value, photo: [])
   end
 
 end
