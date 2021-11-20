@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  TYPES = ["Iglu", "Cachecol", "Varas", "Roupas", "Sapato", "Chapeu", "Comida"]
+  TYPES = ["Igloo", "Scarf", "Fishing rod", "Clothes", "Shoes", "Hat", "Food"]
   has_many :itens
   has_one_attached :photo
 end
