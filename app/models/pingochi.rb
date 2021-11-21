@@ -1,6 +1,6 @@
 class Pingochi < ApplicationRecord
   belongs_to :user
-  has_one :inventory
+  has_many :inventories
 
   # Cannot create a new `Pingochi` without a `name`
   validates :name, presence: true

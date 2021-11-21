@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :pingochis, dependent: :destroy
   has_one :wallet, dependent: :destroy
+  has_many :inventories, dependent: :destroy
 
   after_create :create_wallet
 

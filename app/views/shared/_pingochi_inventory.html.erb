@@ -1,3 +1,6 @@
 <div class="nes-container with-title">
   <p class="title">Inventory</p>
+  <% @pingochi.inventories.each do |inventory| %>
+    <%= inventory.item.name %>
+  <% end %>
 </div>
