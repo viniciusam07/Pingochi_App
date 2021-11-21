@@ -1,6 +1,6 @@
 class Pingochi < ApplicationRecord
   belongs_to :user
-  #has_one :item
+  has_one :inventory
 
   # Cannot create a new `Pingochi` without a `name`
   validates :name, presence: true
@@ -18,10 +18,11 @@ class Pingochi < ApplicationRecord
   validates :energy, numericality: { only_integer: true, in: %w(0..100) }
 
   before_create :set_nft
+  before_create :set_gender
 
   after_create :set_inventory
 
-  #before_create :set_gender
+  before_create :set_gender
 
   SPECIES = ["King Penguin", "Humboldt Penguin", "Emperor Penguin", "Blue Penguin", "Adelie Penguin", "Yellow eyed Penguin"]
 

@@ -1,5 +1,3 @@
 class Category < ApplicationRecord
-  TYPES = ["Igloo", "Scarf", "Fishing rod", "Clothes", "Shoes", "Hat", "Food"]
-  has_many :itens
-  has_one_attached :photo
+  has_many :items, dependent: :destroy
 end
