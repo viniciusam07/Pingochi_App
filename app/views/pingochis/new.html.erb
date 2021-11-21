@@ -4,22 +4,15 @@
   <%= simple_form_for @pingochi do |f| %>
     <%= f.input :name, wrapper_html: { class: 'name' }, required: true %>
 
-
-
-
-
-
-      <%= f.input :specie,
-            as: :radio_buttons,
-            collection_wrapper_tag: 'div',
-            collection_wrapper_class: 'specie-wrapper',
-            item_wrapper_class: 'specie-item',
-            input_html: {class: 'specie-selector'},
-            #collection: Pingochi::SPECIES.map { |specie| [[image_tag("/assets/images/pinguim-azul.jpg"), specie] },
-            collection: Pingochi::SPECIES,
-            required:true %>
-
-
+      <div class="row">
+      <% Pingochi::SPECIES.each do |specie|%>
+        <div class="col-4 species" data-specie="<%=specie%>">
+          <p> <%= specie %> </p>
+          <%=image_tag "#{specie.downcase.gsub(' ','-')}.jpg", class: "pingochi-avatar"%>
+        </div>
+      <% end %>
+      </div>
+    <%=f.input :specie, as: :hidden%>
     <%= f.button :submit, class: "btn btn-primary" %>
     <%end%>
 </div>
