@@ -15,7 +15,7 @@ puts 'Creating 50 igloos...'
   igloo = Item.new(
     category: Category.find_by(name: "Igloo"),
     description: " #{Faker::Games::Zelda.character} #{Faker::Games::Pokemon.move} Igloo",
-    name:"Igloo #{Faker::Code.ean}",
+    name:"Igloo #{Faker::JapaneseMedia::DragonBall.race} #{Faker::JapaneseMedia::DragonBall.planet}",
     nft: Faker::Blockchain::Ethereum.address,
     value: rand(100..500)
   )
@@ -27,7 +27,7 @@ puts 'Creating 50 scarfs...'
   scarf = Item.new(
     category: Category.find_by(name: "Scarf"),
     description: " #{Faker::Games::Zelda.character} #{Faker::Games::Pokemon.move} Igloo",
-    name:"Scarf #{Faker::Code.ean}",
+    name:"Scarf #{Faker::JapaneseMedia::DragonBall.race} #{Faker::JapaneseMedia::DragonBall.planet}",
     nft: Faker::Blockchain::Ethereum.address,
     value: rand(100..500)
   )
@@ -39,7 +39,7 @@ puts 'Creating 50 Fishing Rods...'
   fishing_rods = Item.new(
     category: Category.find_by(name: "Fishing Rods"),
     description: " #{Faker::Games::Zelda.character} #{Faker::Games::Pokemon.move} Igloo",
-    name:"Fishing Rod #{Faker::Code.ean}",
+    name:"Fishing Rod #{Faker::JapaneseMedia::Doraemon.location}",
     nft: Faker::Blockchain::Ethereum.address,
     value: rand(100..500)
   )
@@ -51,7 +51,7 @@ puts 'Creating 50 Clothes...'
   clothes = Item.new(
     category: Category.find_by(name: "Clothes"),
     description: " #{Faker::Games::Zelda.character} #{Faker::Games::Pokemon.move} Igloo",
-    name:"Clothes #{Faker::Code.ean}",
+    name:"Clothe #{Faker::Movies::HarryPotter.spell}",
     nft: Faker::Blockchain::Ethereum.address,
     value: rand(100..500)
   )
@@ -63,7 +63,7 @@ puts 'Creating 50 Shoe...'
   shoe = Item.new(
     category: Category.find_by(name: "Shoe"),
     description: " #{Faker::Games::Zelda.character} #{Faker::Games::Pokemon.move} Igloo",
-    name:"Shoe #{Faker::Code.ean}",
+    name:"Shoe #{Faker::Movies::StarWars.vehicle}",
     nft: Faker::Blockchain::Ethereum.address,
     value: rand(100..500)
   )
@@ -75,7 +75,7 @@ puts 'Creating 50 Hat...'
   hat = Item.new(
     category: Category.find_by(name: "Hat"),
     description: " #{Faker::Games::Zelda.character} #{Faker::Games::Pokemon.move} Igloo",
-    name:"Hat #{Faker::Code.ean}",
+    name:"Hat #{Faker::Movies::LordOfTheRings.character}",
     nft: Faker::Blockchain::Ethereum.address,
     value: rand(100..500)
   )

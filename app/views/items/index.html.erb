@@ -9,9 +9,8 @@
       <div class="card-category nes-container is-rounded">
         <div>
           <p>Item Name:<%= item.name %></p>
-          <p>Description:<%= item.description %></p>
-          <p>NFT:<%= item.nft %></p>
-          <p>Price:<%= "#{item.value} fishcoins" %></p>
+          <p>NFT:<%= item.nft.truncate(12) %></p>
+          <p>Price:<%= "#{item.value} F$C" %></p>
           <p>Category:<%= item.category.name %></p>
           <%= simple_form_for [@pingochi, @inventory] do |f| %>
             <%= f.hidden_field :item_id, value: item.id %>
