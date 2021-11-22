@@ -2,9 +2,8 @@
   <% if @pingochi.age <= 1%>
     <%= image_tag "egg.jpg" %>
   <% elsif @pingochi.age.between?(2, 4)%>
-    # Chick Pingochi
-    <%= image_tag "pingochi_stay_animation.gif" %>
+    <%= image_tag "pingochi_chick_chill.gif" %>
   <% elsif @pingochi.age.between?(5, 10)%>
-    <%= "Pingochi is an Adult" %>
-  <% end  %>
+    <%= image_tag "pingochi_chill.gif" %>
+  <% end %>
 </div>
