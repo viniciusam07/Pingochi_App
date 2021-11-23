@@ -10,7 +10,7 @@ class InventoriesController < ApplicationController
       flash[:notice] = "You bought #{item.name}!!!"
     else
       redirect_to pingochi_items_path(pingochi)
-      flash[:notice] = "Your fishcoin balance it is not enough "
+      flash[:notice] = "Your fishcoin balance it is not enough"
     end
   end
 end
