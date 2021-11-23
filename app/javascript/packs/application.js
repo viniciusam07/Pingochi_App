@@ -42,6 +42,7 @@ initSweetalert('#sweet-alert-demo', {
 initSweetalert('#sweet-alert-slap', {
   title: "Slap!",
   text: "Your pingochi just got a slap!",
+  closeOnEsc: false,
   icon: "https://i.gifer.com/3U60.gif"
 });
 

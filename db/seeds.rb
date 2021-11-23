@@ -26,7 +26,7 @@ puts 'Creating 50 scarfs...'
 50.times do
   scarf = Item.new(
     category: Category.find_by(name: "Scarf"),
-    description: " #{Faker::Games::Zelda.character} #{Faker::Games::Pokemon.move} Igloo",
+    description: " #{Faker::Games::Zelda.character} #{Faker::Games::Pokemon.move} Scarf",
     name:"Scarf #{Faker::JapaneseMedia::DragonBall.race} #{Faker::JapaneseMedia::DragonBall.planet}",
     nft: Faker::Blockchain::Ethereum.address,
     value: rand(100..500)
@@ -38,7 +38,7 @@ puts 'Creating 50 Fishing Rods...'
 50.times do
   fishing_rods = Item.new(
     category: Category.find_by(name: "Fishing Rods"),
-    description: " #{Faker::Games::Zelda.character} #{Faker::Games::Pokemon.move} Igloo",
+    description: " #{Faker::Games::Zelda.character} #{Faker::Games::Pokemon.move} Fishing Rod",
     name:"Fishing Rod #{Faker::JapaneseMedia::Doraemon.location}",
     nft: Faker::Blockchain::Ethereum.address,
     value: rand(100..500)
@@ -50,7 +50,7 @@ puts 'Creating 50 Clothes...'
 50.times do
   clothes = Item.new(
     category: Category.find_by(name: "Clothes"),
-    description: " #{Faker::Games::Zelda.character} #{Faker::Games::Pokemon.move} Igloo",
+    description: " #{Faker::Games::Zelda.character} #{Faker::Games::Pokemon.move} Clothe",
     name:"Clothe #{Faker::Movies::HarryPotter.spell}",
     nft: Faker::Blockchain::Ethereum.address,
     value: rand(100..500)
@@ -62,7 +62,7 @@ puts 'Creating 50 Shoe...'
 50.times do
   shoe = Item.new(
     category: Category.find_by(name: "Shoe"),
-    description: " #{Faker::Games::Zelda.character} #{Faker::Games::Pokemon.move} Igloo",
+    description: " #{Faker::Games::Zelda.character} #{Faker::Games::Pokemon.move} Shoe",
     name:"Shoe #{Faker::Movies::StarWars.vehicle}",
     nft: Faker::Blockchain::Ethereum.address,
     value: rand(100..500)
@@ -74,7 +74,7 @@ puts 'Creating 50 Hat...'
 50.times do
   hat = Item.new(
     category: Category.find_by(name: "Hat"),
-    description: " #{Faker::Games::Zelda.character} #{Faker::Games::Pokemon.move} Igloo",
+    description: " #{Faker::Games::Zelda.character} #{Faker::Games::Pokemon.move} Hat",
     name:"Hat #{Faker::Movies::LordOfTheRings.character}",
     nft: Faker::Blockchain::Ethereum.address,
     value: rand(100..500)
