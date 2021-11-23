@@ -8,6 +8,9 @@
     <% @items.each do |item| %>
       <div class="card-category nes-container is-rounded">
         <div>
+          <div>
+            <%# image_tag "../../#{item.image_url}" %>
+          </div>
           <p>Item Name:<%= item.name %></p>
           <p>NFT:<%= item.nft.truncate(12) %></p>
           <p>Price:<%= "#{item.value} F$C" %></p>
