@@ -40,10 +40,16 @@ initSweetalert('#sweet-alert-demo', {
 });
 
 initSweetalert('#sweet-alert-slap', {
-  title: "Slap!",
+  title: "Are you sure?",
   text: "Your pingochi just got a slap!",
-  closeOnEsc: false,
-  icon: "https://i.gifer.com/3U60.gif"
+  icon: "https://i.gifer.com/3U60.gif",
+  dangerMode: true,
+  buttons: true
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#slap-action');
+    link.click();
+  }
 });
 
 document.addEventListener('turbolinks:load', () => {
