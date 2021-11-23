@@ -28,14 +28,22 @@ import "bootstrap";
 import { initSweetalert } from '../plugins/init_sweetalert';
 import { speciesSelector } from '../plugins/species_selector';
 
-initSweetalert('#sweet-alert-demo', {
-  title: "A nice alert",
-  text: "This is a great alert, isn't it?",
-  icon: "success"
-});
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+
+initSweetalert('#sweet-alert-demo', {
+  title: "A nice alert",
+  text: "This is a great alert, isn't it?",
+  icon: "https://i.gifer.com/4eRC.gif"
+});
+
+initSweetalert('#sweet-alert-slap', {
+  title: "Slap!",
+  text: "Your pingochi just got a slap!",
+  icon: "https://i.gifer.com/3U60.gif"
+});
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:

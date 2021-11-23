@@ -1,4 +1,3 @@
-
 const speciesSelector = () => {
   document.querySelectorAll(".species").forEach((element)=>{
     element.addEventListener("click", (event)=>{
