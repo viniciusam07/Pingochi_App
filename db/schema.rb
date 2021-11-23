@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_194837) do
+ActiveRecord::Schema.define(version: 2021_11_23_141904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +38,16 @@ ActiveRecord::Schema.define(version: 2021_11_22_194837) do
     t.bigint "category_id", null: false
     t.integer "value"
     t.string "nft"
+    t.string "image_url"
     t.index ["category_id"], name: "index_items_on_category_id"
+  end
+
+  create_table "pingochi_friendships", force: :cascade do |t|
+    t.bigint "pingochi_id", null: false
+    t.integer "pingochi_friend_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pingochi_id"], name: "index_pingochi_friendships_on_pingochi_id"
   end
 
   create_table "pingochis", force: :cascade do |t|
@@ -84,6 +93,7 @@ ActiveRecord::Schema.define(version: 2021_11_22_194837) do
   add_foreign_key "inventories", "pingochis"
   add_foreign_key "inventories", "users"
   add_foreign_key "items", "categories"
+  add_foreign_key "pingochi_friendships", "pingochis"
   add_foreign_key "pingochis", "items"
   add_foreign_key "pingochis", "users"
   add_foreign_key "wallets", "users"
