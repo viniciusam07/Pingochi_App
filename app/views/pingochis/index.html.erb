@@ -1,0 +1,6 @@
+<div class="container">
+    <% @pingochis.each do |pingochi|  %>
+      <%= pingochi.name %>
+      <%= pingochi.current_user.nick_name %>
+    <% end %>
+</div>

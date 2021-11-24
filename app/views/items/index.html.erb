@@ -9,7 +9,10 @@
       <div class="card-category nes-container is-rounded">
         <div>
           <div>
-            <%# image_tag "../../#{item.image_url}" %>
+            <div style = "background-image: url(<%= asset_url('/items/' + item.image_url) %>); height: 32px; width: 32px;" >
+            </div>
+            <%= image_tag( '/items/' + item.image_url, size: "50x50") %>
+            <%= image_tag("/items/#{ item.image_url }", class: 'image', size: "50x50") %>
           </div>
           <p>Item Name:<%= item.name %></p>
           <p>NFT:<%= item.nft.truncate(12) %></p>
