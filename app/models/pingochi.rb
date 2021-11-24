@@ -43,6 +43,10 @@ class Pingochi < ApplicationRecord
 
   def feed
     self.energy += 20
+    if self.energy > 100
+      self.energy = 100
+      self.save
+    end
     self.save
   end
 
