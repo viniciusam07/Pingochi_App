@@ -1,5 +1,10 @@
 class PingochisController < ApplicationController
 
+  def index
+    @user_pingochis = Pingochi.where(user: current_user)
+    @other_pingochis = Pingochi.where.not(user: current_user)
+  end
+
   def new
     @pingochi = Pingochi.new
   end
@@ -9,7 +14,10 @@ class PingochisController < ApplicationController
     @pingochi.gender = ["male", "female"].sample
     @pingochi.user = current_user
     if @pingochi.save
-      redirect_to pingochi_path(@pingochi)
+      respond_to do |format|
+        format.html { redirect_to pingochi_path(@pingochi) }
+        format.js   { render :js => init_sweetalert('#load-pingochi') }
+      end
     else
       render 'new'
     end

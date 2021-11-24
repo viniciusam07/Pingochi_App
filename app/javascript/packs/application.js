@@ -56,4 +56,15 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   speciesSelector();
+  initSweetalert('#load-pingochi', {
+    title: "Generating NFT Tokens for your Pingochi ",
+    icon: "https://media.giphy.com/media/aYKTYtCYb2ECSKfyal/giphy.gif",
+    buttons: false,
+    timer: 10000,
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#load-pingochi');
+      link.click();
+    }
+  });
 });

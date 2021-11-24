@@ -1,0 +1,7 @@
+<div class="container">
+  <% if @pingochi.user == current_user %>
+    <% @pingochis.each do |pingochi|  %>
+      <%=  %>
+    <% end %>
+  <% end %>
+</div>
