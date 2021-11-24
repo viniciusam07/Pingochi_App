@@ -1,7 +1,6 @@
 <div class="container">
-  <% if @pingochi.user == current_user %>
     <% @pingochis.each do |pingochi|  %>
-      <%=  %>
+      <%= pingochi.name %>
+      <%= pingochi.current_user.nick_name %>
     <% end %>
-  <% end %>
 </div>
