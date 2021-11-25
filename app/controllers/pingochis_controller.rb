@@ -1,8 +1,9 @@
 class PingochisController < ApplicationController
 
   def index
+    @pingochis = Pingochi.all
     @user_pingochis = Pingochi.where(user: current_user)
-    @other_pingochis = Pingochi.where.not(user: current_user)
+    @friend_pingochis = Pingochi.where.not(user: current_user)
   end
 
   def new
@@ -37,8 +38,6 @@ class PingochisController < ApplicationController
     @pingochi.slap
     redirect_to pingochi_path(@pingochi)
     flash[:notice] = 'Toma essa'
-
-    # o alerta da ação será com JSSS
   end
 
   def fish
@@ -46,21 +45,18 @@ class PingochisController < ApplicationController
     @pingochi.fish
     redirect_to pingochi_path(@pingochi)
     flash[:notice] = 'Your Pingochi just fish more fishcoins!!!'
-    # o alerta da ação será com JSSS
   end
 
   def feed
     @pingochi = Pingochi.find(params[:pingochi_id])
     if @pingochi.energy >=100
-    redirect_to pingochi_path(@pingochi)
-    flash[:notice] = 'Your Pingochi is already fed!'
+      redirect_to pingochi_path(@pingochi)
+      flash[:notice] = 'Your Pingochi is already fed!'
     else
-    @pingochi.feed
-    redirect_to pingochi_path(@pingochi)
-    flash[:notice] = 'Alimentado! Energia: +20'
+      @pingochi.feed
+      redirect_to pingochi_path(@pingochi)
+      flash[:notice] = 'Alimentado! Energia: +20'
     end
-
-    # o alerta da ação será com JS
   end
 
   def sleep
@@ -68,7 +64,6 @@ class PingochisController < ApplicationController
     @pingochi.sleep
     redirect_to pingochi_path(@pingochi)
     flash[:notice] = 'ZZzZzZzZzZz'
-    # o alerta da ação será com JS
   end
 
   def uti
@@ -76,10 +71,7 @@ class PingochisController < ApplicationController
     @pingochi.uti
     redirect_to pingochi_path(@pingochi)
     flash[:notice] = "Seu Pingochi chegou no limite e precisa de atendimento especial"
-    # o alerta da ação será com JS
   end
-
-
 
   private
 
