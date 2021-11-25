@@ -4,6 +4,14 @@ class PingochisController < ApplicationController
     @pingochis = Pingochi.all
     @user_pingochis = Pingochi.where(user: current_user)
     @friend_pingochis = Pingochi.where.not(user: current_user)
+
+    if params[:query].present?
+      @pingochis = @pingochis.where('name ILIKE ?', "%#{params[:query]}%")
+    end
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: 'shared/pingochi_list.html', locals: { pingochis: @pingochis } }
+    end
   end
 
   def new

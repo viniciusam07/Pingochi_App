@@ -1,21 +1,15 @@
 <div class="container">
-  <div class="cards">
-    <% @user_pingochis.each do |pingochi|  %>
-      <div class="card-pingochi nes-container">
-        <div class="pingochi-img">
-          <%=image_tag "#{pingochi.specie.downcase.gsub(' ','-')}.jpg", class: "card-pingochi-user avatar-bordered"%>
-        </div>
-        <div class="card-pingochi-infos">
-          <div>
-            <h2><%= pingochi.name %></h2>
-            <p><%= pingochi.gender %></p>
-            <p><%= pingochi.age %></p>
-            <p><%= pingochi.specie %></p>
-          </div>
-          <p class="card-pingochi-user-nickname"><%= pingochi.user.nick_name %></p>
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "card-pingochi-user avatar-bordered" %>
-        </div>
-      </div>
+  <div data-controller="refresh-pingochi-list">
+    <%= form_with url: pingochis_path, method: :get, html: { class: 'mb-5', data: { refresh_pingochi_list_target: 'form' } } do |f| %>
+      <%= f.text_field :query,
+                       class: "form-control",
+                       placeholder: 'Type pingochi name here',
+                       value: params[:query],
+                       data: {
+                        refresh_pingochi_list_target: 'searchInput',
+                        action: "keyup->refresh-pingochi-list#update"
+                      } %>
     <% end %>
+    <%= render "shared/pingochi_list", pingochis: @pingochis %>
   </div>
 </div>
