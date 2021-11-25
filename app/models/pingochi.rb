@@ -35,13 +35,19 @@ class Pingochi < ApplicationRecord
   end
 
   def fish
+    self.energy -= 10
+    self.save
+    if self.energy.zero?
+      self.uti
+    end
     fishcoin_collected = rand(1..10).to_i
     old_balance = user.wallet.fishcoin_amount.to_i
     new_balance = old_balance + fishcoin_collected
     Wallet.update(fishcoin_amount: new_balance)
+
   end
 
-  def feed
+   def feed
     self.energy += 20
     if self.energy > 100
       self.energy = 100
