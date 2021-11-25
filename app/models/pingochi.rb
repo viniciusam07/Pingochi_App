@@ -44,10 +44,9 @@ class Pingochi < ApplicationRecord
     old_balance = user.wallet.fishcoin_amount.to_i
     new_balance = old_balance + fishcoin_collected
     Wallet.update(fishcoin_amount: new_balance)
-
   end
 
-   def feed
+  def feed
     self.energy += 20
     if self.energy > 100
       self.energy = 100
