@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Welcome to Pingochi <%= @pingochi.name %> Wagon Market</h1>
+  <p><%= "We have #{@items.count} for sale!" %></p>
+</div>
+
+<div class="container">
+  <div class = "cards">
+    <% @items.each do |item| %>
+      <div class="card-category nes-container is-rounded">
+        <div>
+          <div>
+            <div style = "background-image: url(<%= asset_url('/items/' + item.image_url) %>); height: 32px; width: 32px;" >
+            </div>
+            <%= image_tag( '/items/' + item.image_url, size: "50x50") %>
+            <%= image_tag("/items/#{ item.image_url }", class: 'image', size: "50x50") %>
+          </div>
+          <p>Item Name:<%= item.name %></p>
+          <p>NFT:<%= item.nft.truncate(12) %></p>
+          <p>Price:<%= "#{item.value} F$C" %></p>
+          <p>Category:<%= item.category.name %></p>
+          <%= simple_form_for [@pingochi, @inventory] do |f| %>
+            <%= f.hidden_field :item_id, value: item.id %>
+            <%= f.submit 'Buy', class: "nes-btn is-error" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

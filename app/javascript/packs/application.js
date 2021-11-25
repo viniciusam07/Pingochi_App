@@ -25,14 +25,48 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import "nes.css/css/nes.min.css";
-import Swal from 'sweetalert2'
-window.Swal = Swal;
+import { initSweetalert } from '../plugins/init_sweetalert';
+import { speciesSelector } from '../plugins/species_selector';
+
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+initSweetalert('#sweet-alert-demo', {
+  title: "A nice alert",
+  text: "This is a great alert, isn't it?",
+  icon: "https://i.gifer.com/4eRC.gif"
+});
+
+initSweetalert('#sweet-alert-slap', {
+  title: "Are you sure?",
+  text: "Your pingochi just got a slap!",
+  icon: "https://i.gifer.com/3U60.gif",
+  dangerMode: true,
+  buttons: true
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#slap-action');
+    link.click();
+  }
+});
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  speciesSelector();
+  initSweetalert('#load-pingochi', {
+    title: "Generating NFT Tokens for your Pingochi ",
+    icon: "https://media.giphy.com/media/aYKTYtCYb2ECSKfyal/giphy.gif",
+    buttons: false,
+    timer: 10000,
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#load-pingochi');
+      link.click();
+    }
+  });
 });
+
+import "controllers"

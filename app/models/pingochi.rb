@@ -1,5 +1,6 @@
 class Pingochi < ApplicationRecord
   belongs_to :user
+  has_many :inventories
 
   # Cannot create a new `Pingochi` without a `name`
   validates :name, presence: true
@@ -17,10 +18,13 @@ class Pingochi < ApplicationRecord
   validates :energy, numericality: { only_integer: true, in: %w(0..100) }
 
   before_create :set_nft
+  before_create :set_gender
 
-  SPECIES = ["Pinguim Rei", "Pinguim Macaroni", "Pinguim Imperador", "Pinguim de Humboldt", "Pinguim de Barbicha", "Pinguim das Snares", "Pinguim de Galápagos", "Pinguim de Adélia", "Pinguim Azul"]
+  after_create :set_inventory
 
+  before_create :set_gender
 
+  SPECIES = ["King Penguin", "Humboldt Penguin", "Emperor Penguin", "Blue Penguin", "Adelie Penguin", "Yellow eyed Penguin"]
 
   def slap
     self.energy -= 10
@@ -30,8 +34,24 @@ class Pingochi < ApplicationRecord
     end
   end
 
+  def fish
+    self.energy -= 10
+    self.save
+    if self.energy.zero?
+      self.uti
+    end
+    fishcoin_collected = rand(1..10).to_i
+    old_balance = user.wallet.fishcoin_amount.to_i
+    new_balance = old_balance + fishcoin_collected
+    Wallet.update(fishcoin_amount: new_balance)
+  end
+
   def feed
     self.energy += 20
+    if self.energy > 100
+      self.energy = 100
+      self.save
+    end
     self.save
   end
 
@@ -61,7 +81,18 @@ class Pingochi < ApplicationRecord
   def set_nft
     self.nft = Time.now.to_i.to_s
   end
+
+  def set_inventory
+    @inventory = Inventory.new
+    @inventory.pingochi_id = self.id
+    @inventory.save
+  end
+
+  def set_gender
+    self.gender = %w(male female).sample
+  end
 end
+
 
 # acoes que envolvem dois pingochis o seu e o de um amigo deve usar o current_user.pingochi e o @pingochis
 # se eu estiver na pagina de show não mostrar botao na pagina de show para acoes que envolvam o pingochi do amigo

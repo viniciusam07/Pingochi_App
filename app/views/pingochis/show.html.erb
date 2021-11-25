@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container" style = 'margin-top:20px'>
   <div class="row">
 
     <div class="col-3">
@@ -9,15 +9,19 @@
     </div>
 
     <div class="col-4">
-      <p class="title">Pingochi Animation</p>
-      <%= render 'shared/pingochi_animation' %>
+      <div>
+        <%= render 'shared/pingochi_animation' %>
+      </div>
+      <div style = 'margin-top:20px'>
+        <%= render 'shared/pingochi_inventory' %>
+      </div>
     </div>
 
     <div class="col-5">
       <div>
         <%= render 'shared/pingochi_info' %>
       </div>
-      <div>
+      <div style = "margin-top:20px">
         <%= render 'shared/pingochi_status' %>
       </div>
     </div>
