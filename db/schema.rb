@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_23_141904) do
+ActiveRecord::Schema.define(version: 2021_11_26_174400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,9 @@ ActiveRecord::Schema.define(version: 2021_11_23_141904) do
     t.datetime "uti_at"
     t.string "specie"
     t.bigint "item_id"
+    t.integer "strength_skill", default: 0, null: false
+    t.integer "inteligence_skill", default: 0, null: false
+    t.integer "speed_skill", default: 0, null: false
     t.index ["item_id"], name: "index_pingochis_on_item_id"
     t.index ["user_id"], name: "index_pingochis_on_user_id"
   end
