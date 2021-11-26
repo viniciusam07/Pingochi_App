@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     patch 'feed', to: 'pingochis#feed'
     patch 'sleep', to: 'pingochis#sleep'
     patch 'fish', to: 'pingochis#fish'
+    patch 'strength', to: 'pingochis#strength'
+    patch 'inteligence', to: 'pingochis#inteligence'
+    patch 'speed', to: 'pingochis#speed'
     resources :items, only: [:index]
     resources :inventories, only: [:create]
   end

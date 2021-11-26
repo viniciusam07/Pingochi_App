@@ -76,6 +76,36 @@ class Pingochi < ApplicationRecord
     self.uti_at.present? && self.uti_at > DateTime.current - 10.minutes
   end
 
+  def strength
+    self.energy -= 10
+    self.save
+    if self.energy.zero?
+      self.uti
+    end
+    self.strength_skill += rand(1..5)
+    self.save
+  end
+
+  def inteligence
+    self.energy -= 10
+    self.save
+    if self.energy.zero?
+      self.uti
+    end
+    self.inteligence_skill += rand(1..5)
+    self.save
+  end
+
+  def speed
+    self.energy -= 10
+    self.save
+    if self.energy.zero?
+      self.uti
+    end
+    self.speed_skill += rand(1..5)
+    self.save
+  end
+
   private
 
   def set_nft

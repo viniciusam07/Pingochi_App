@@ -66,7 +66,7 @@ class PingochisController < ApplicationController
     else
       @pingochi.feed
       redirect_to pingochi_path(@pingochi)
-      flash[:notice] = 'Alimentado! Energia: +20'
+      flash[:notice] = 'Yummie! Energy: +20'
     end
   end
 
@@ -81,7 +81,43 @@ class PingochisController < ApplicationController
     @pingochi = Pingochi.find(params[:id])
     @pingochi.uti
     redirect_to pingochi_path(@pingochi)
-    flash[:notice] = "Seu Pingochi chegou no limite e precisa de atendimento especial"
+    flash[:notice] = "Your Pingochi needs special treatment"
+  end
+
+  def strength
+    @pingochi = Pingochi.find(params[:pingochi_id])
+    if @pingochi.strength_skill >= 100
+      redirect_to pingochi_path(@pingochi)
+      flash[:notice] = 'Your Pingochi is the most powerful'
+    else
+      @pingochi.strength
+      redirect_to pingochi_path(@pingochi)
+      flash[:notice] = 'strength increase!'
+    end
+  end
+
+  def inteligence
+    @pingochi = Pingochi.find(params[:pingochi_id])
+    if @pingochi.inteligence_skill >= 100
+      redirect_to pingochi_path(@pingochi)
+      flash[:notice] = 'Your Pingochi is the most inteligent'
+    else
+      @pingochi.inteligence
+      redirect_to pingochi_path(@pingochi)
+      flash[:notice] = 'inteligence increase!'
+    end
+  end
+
+  def speed
+    @pingochi = Pingochi.find(params[:pingochi_id])
+    if @pingochi.speed_skill >= 100
+      redirect_to pingochi_path(@pingochi)
+      flash[:notice] = 'Your Pingochi is the fastest'
+    else
+      @pingochi.speed
+      redirect_to pingochi_path(@pingochi)
+      flash[:notice] = 'speed increase!'
+    end
   end
 
   private
