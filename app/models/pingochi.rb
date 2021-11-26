@@ -86,6 +86,26 @@ class Pingochi < ApplicationRecord
     self.save
   end
 
+  def inteligence
+    self.energy -= 10
+    self.save
+    if self.energy.zero?
+      self.uti
+    end
+    self.inteligence_skill += rand(1..5)
+    self.save
+  end
+
+  def speed
+    self.energy -= 10
+    self.save
+    if self.energy.zero?
+      self.uti
+    end
+    self.speed_skill += rand(1..5)
+    self.save
+  end
+
   private
 
   def set_nft

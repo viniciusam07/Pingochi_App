@@ -96,6 +96,30 @@ class PingochisController < ApplicationController
     end
   end
 
+  def inteligence
+    @pingochi = Pingochi.find(params[:pingochi_id])
+    if @pingochi.inteligence_skill >= 100
+      redirect_to pingochi_path(@pingochi)
+      flash[:notice] = 'Your Pingochi is the most inteligent'
+    else
+      @pingochi.inteligence
+      redirect_to pingochi_path(@pingochi)
+      flash[:notice] = 'inteligence increase!'
+    end
+  end
+
+  def speed
+    @pingochi = Pingochi.find(params[:pingochi_id])
+    if @pingochi.speed_skill >= 100
+      redirect_to pingochi_path(@pingochi)
+      flash[:notice] = 'Your Pingochi is the fastest'
+    else
+      @pingochi.speed
+      redirect_to pingochi_path(@pingochi)
+      flash[:notice] = 'speed increase!'
+    end
+  end
+
   private
 
   def pingochi_params
