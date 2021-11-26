@@ -7,7 +7,10 @@ class PingochisController < ApplicationController
 
     if params[:query].present?
       @pingochis = @pingochis.where('name ILIKE ?', "%#{params[:query]}%")
+    elsif params[:gender].present? && params[:gender] != ""
+      @pingochis = @pingochis.where('gender ILIKE ?', "%#{params[:gender]}%")
     end
+
     respond_to do |format|
       format.html # Follow regular flow of Rails
       format.text { render partial: 'shared/pingochi_list.html', locals: { pingochis: @pingochis } }
