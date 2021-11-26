@@ -8,6 +8,5 @@ class ItemsController < ApplicationController
     @items_2 = Item.where(category_id: category_food.id)
     @items = @items + @items_2
     @items.shuffle
-    # validar para não sumir do mercado a categoria Food
   end
 end

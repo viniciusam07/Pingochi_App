@@ -8,9 +8,6 @@
     <div class="cards">
       <% @pingochis.each do |pingochi|  %>
         <div class="card-pingochi nes-container">
-          <div class="pingochi-img">
-            <%=image_tag "#{pingochi.specie.downcase.gsub(' ','-')}.jpg", class: "card-pingochi-user avatar-bordered"%>
-          </div>
           <div class="card-pingochi-infos">
             <div>
               <h2><%= link_to "#{pingochi.name}", pingochi_path(pingochi) %></h2>

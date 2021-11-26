@@ -13,7 +13,11 @@
       <% end %>
     <p>Live: <%=@pingochi.live%></p>
     <p>Slepping: <%=@pingochi.sleep?%></p>
-    <p>Last Sleep: <%=@pingochi.slept_at%></p>
+    <% if @pingochi.slept_at != nil  %>
+      <p>Last Sleep: <%=@pingochi.slept_at.strftime("%m-%e-%y %H:%M")%></p>
+    <% else %>
+      <p>Last Sleep: <%=@pingochi.slept_at%></p>
+    <% end %>
     <p>UTI now?: <%=@pingochi.uti?%></p>
     <p>Last UTI: <%=@pingochi.uti_at%></p>
 </div>
