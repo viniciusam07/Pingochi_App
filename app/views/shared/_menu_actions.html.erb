@@ -4,14 +4,14 @@
   <button id="sweet-alert-slap" class="nes-btn is-warning"">Slap</button>
   <%=link_to "", pingochi_slap_path(@pingochi), method: :patch, id: "slap-action" , class: "hidden" %>
 
-  <%=link_to "feed", pingochi_feed_path(@pingochi), class: "nes-btn is-warning", method: :patch%>
+  <button id="sweet-alert-feed" class="nes-btn is-warning"">Feed</button>
+  <%=link_to "", pingochi_feed_path(@pingochi), method: :patch, id: "feed-action" , class: "hidden"%>
 
   <%=link_to "sleep", pingochi_sleep_path(@pingochi), class: "nes-btn is-warning", method: :patch%>
 
   <%=link_to "Market", pingochi_items_path(@pingochi), class: "nes-btn is-warning"%>
 
-  <%=link_to "fish", pingochi_fish_path(@pingochi), class: "nes-btn is-warning", method: :patch%>
-
-  <button id="sweet-alert-demo" class="btn btn-primary nes-btn is-warning">Test!</button>
+  <button id="sweet-alert-fish" class="nes-btn is-warning"">Fish</button>
+  <%=link_to "", pingochi_fish_path(@pingochi), method: :patch, id: "fish-action" , class: "hidden"%>
 
 </div>
