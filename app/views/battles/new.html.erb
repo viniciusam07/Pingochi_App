@@ -1,0 +1,12 @@
+<div class="container">
+  New Battle
+  <h1><%= @pingochi1.name %> X <%= @pingochi2.name %></h1>
+  <div class="row">
+    <div class="nes-container with-title ">
+
+    </div>
+
+  </div>
+
+  <%= link_to "Fight!", pingochi_opponent_battles_path(@pingochi1, @pingochi2), class: "nes-btn is-error", method: "post" %>
+</div>
