@@ -11,7 +11,7 @@ const initSweetalert = (selector, options = {}, callback = () => { }) => {
 
 initSweetalert('#sweet-alert-slap', {
   title: "Are you sure?",
-  text: "Your pingochi just got a slap!",
+  text: "A slap drains 10 energy units!",
   icon: "https://media.giphy.com/media/ewHSMEx2TtEo8/source.gif",
   dangerMode: true,
   buttons: true,
@@ -37,7 +37,7 @@ initSweetalert('#sweet-alert-fish', {
 
 initSweetalert('#sweet-alert-feed', {
   title: "Let's eat something?",
-  text: "Your pingochi will gain +20 of energy",
+  text: "Your pingochi will gain 20 energy units",
   icon: "https://media.giphy.com/media/Ve5J6fIqJ4TFmz6Ene/giphy-downsized-large.gif",
   dangerMode: true,
   buttons: true,

@@ -1,0 +1,14 @@
+# Query: are you sure
+# ContextLines: 1
+
+2 results - 2 files
+
+app/javascript/plugins/init_sweetalert.js:
+  12  initSweetalert('#sweet-alert-slap', {
+  13:   title: "Are you sure?",
+  14    text: "A slap drains 10 energy units!",
+
+app/views/devise/registrations/edit.html.erb:
+  32  
+  33: <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+  34  

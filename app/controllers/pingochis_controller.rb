@@ -48,25 +48,25 @@ class PingochisController < ApplicationController
     @pingochi = Pingochi.find(params[:pingochi_id])
     @pingochi.slap
     redirect_to pingochi_path(@pingochi)
-    flash[:notice] = 'Toma essa'
+    flash[:notice] = 'Bitchslap!'
   end
 
   def fish
     @pingochi = Pingochi.find(params[:pingochi_id])
     @pingochi.fish
     redirect_to pingochi_path(@pingochi)
-    flash[:notice] = 'Your Pingochi just fish more fishcoins!!!'
+    flash[:notice] = 'Your Pingochi fished more fishcoins!!!'
   end
 
   def feed
     @pingochi = Pingochi.find(params[:pingochi_id])
     if @pingochi.energy >=100
       redirect_to pingochi_path(@pingochi)
-      flash[:notice] = 'Your Pingochi is already fed!'
+      flash[:notice] = 'Your Pingochi health is full!'
     else
       @pingochi.feed
       redirect_to pingochi_path(@pingochi)
-      flash[:notice] = 'Yummie! Energy: +20'
+      flash[:notice] = 'That hit the spot! Energy: +20'
     end
   end
 
@@ -81,18 +81,18 @@ class PingochisController < ApplicationController
     @pingochi = Pingochi.find(params[:id])
     @pingochi.uti
     redirect_to pingochi_path(@pingochi)
-    flash[:notice] = "Your Pingochi needs special treatment"
+    flash[:notice] = "Your Pingochi needs special treatment!"
   end
 
   def strength
     @pingochi = Pingochi.find(params[:pingochi_id])
     if @pingochi.strength_skill >= 100
       redirect_to pingochi_path(@pingochi)
-      flash[:notice] = 'Your Pingochi is the most powerful'
+      flash[:notice] = 'Strength stats maxed out. Your Pingochi is the most powerful!'
     else
       @pingochi.strength
       redirect_to pingochi_path(@pingochi)
-      flash[:notice] = 'strength increase!'
+      flash[:notice] = 'Strength increased!'
     end
   end
 
@@ -100,11 +100,11 @@ class PingochisController < ApplicationController
     @pingochi = Pingochi.find(params[:pingochi_id])
     if @pingochi.inteligence_skill >= 100
       redirect_to pingochi_path(@pingochi)
-      flash[:notice] = 'Your Pingochi is the most inteligent'
+      flash[:notice] = 'Inteligence stats maxed out. Your Pingochi is a brainiac!'
     else
       @pingochi.inteligence
       redirect_to pingochi_path(@pingochi)
-      flash[:notice] = 'inteligence increase!'
+      flash[:notice] = 'Inteligence increased!'
     end
   end
 
@@ -112,11 +112,11 @@ class PingochisController < ApplicationController
     @pingochi = Pingochi.find(params[:pingochi_id])
     if @pingochi.speed_skill >= 100
       redirect_to pingochi_path(@pingochi)
-      flash[:notice] = 'Your Pingochi is the fastest'
+      flash[:notice] = 'Speed stats maxed out. Your Pingochi is a lighning bolt!'
     else
       @pingochi.speed
       redirect_to pingochi_path(@pingochi)
-      flash[:notice] = 'speed increase!'
+      flash[:notice] = 'Speed increased!'
     end
   end
 
