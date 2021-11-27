@@ -10,6 +10,15 @@
                         action: "keyup->refresh-pingochi-list#update"
                       } %>
     <% end %>
+
+    <%= form_with url: pingochis_path, method: :get, html: { class: 'mb-5', data: { refresh_pingochi_list_target: 'form' } } do |f| %>
+      <%= f.select :gender, [["male", "male"], ["female", "female"], ["",""]], selected: "",
+                    data: {
+                      refresh_pingochi_list_target: 'searchInput',
+                      action: "change->refresh-pingochi-list#update"
+                      } %>
+    <% end %>
+
     <%= render "shared/pingochi_list", pingochis: @pingochis %>
   </div>
 </div>

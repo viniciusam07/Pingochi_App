@@ -1,0 +1,73 @@
+<div class="nes-container with-title ">
+  <p class="title">Pingochi Skills</p>
+    <p>Strength: <%=@pingochi.strength_skill%>xp</p>
+    <p>Speed: <%=@pingochi.speed_skill%>xp</p>
+    <p>Inteligence: <%=@pingochi.inteligence_skill%>xp</p>
+      <% if @pingochi.strength_skill <= 9  %>
+        <i class="nes-icon is-small star is-transparent"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+      <% elsif @pingochi.strength_skill.between?(10, 19)  %>
+        <i class="nes-icon is-small star is-half"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+      <% elsif @pingochi.strength_skill.between?(20, 29)  %>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+      <% elsif @pingochi.strength_skill.between?(30, 39)  %>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star is-half"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+      <% elsif @pingochi.strength_skill.between?(40, 49)  %>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+      <% elsif @pingochi.strength_skill.between?(50, 59)  %>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star is-half"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+      <% elsif @pingochi.strength_skill.between?(60, 69)  %>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+      <% elsif @pingochi.strength_skill.between?(70, 79)  %>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star is-half"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+      <% elsif @pingochi.strength_skill.between?(80, 89)  %>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star is-transparent"></i>
+      <% elsif @pingochi.strength_skill.between?(90, 99)  %>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star is-half"></i>
+      <% elsif @pingochi.strength_skill == 100  %>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star"></i>
+        <i class="nes-icon is-small star"></i>
+      <% end %>
+</div>
