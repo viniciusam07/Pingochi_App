@@ -23,6 +23,12 @@ class BattlesController < ApplicationController
   end
 
   def winner(pingochi1, pingochi2)
-    @pingochi1
+    @pingochi1_xp = pingochi1.strength_skill + pingochi1.speed_skill + pingochi1.inteligence_skill
+    @pingochi2_xp = pingochi2.strength_skill + pingochi2.speed_skill + pingochi2.inteligence_skill
+    if @pingochi1_xp >= @pingochi2_xp
+      pingochi1
+    else
+      pingochi2
+    end
   end
 end
