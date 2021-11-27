@@ -120,6 +120,11 @@ class PingochisController < ApplicationController
     end
   end
 
+  def opponents
+    @pingochi = Pingochi.find(params[:pingochi_id])
+    @opponent_pingochis = Pingochi.where.not(id: @pingochi.id)
+  end
+
   private
 
   def pingochi_params

@@ -11,13 +11,18 @@
       <% elsif @pingochi.energy.between?(0, 10)  %>
         <progress class="nes-progress is-error" value=<%=@pingochi.energy%> max="100"></progress>
       <% end %>
-    <p>Live: <%=@pingochi.live%></p>
+
     <p>Slepping: <%=@pingochi.sleep?%></p>
-    <% if @pingochi.slept_at != nil  %>
+    <% if @pingochi.slept_at != nil %>
       <p>Last Sleep: <%=@pingochi.slept_at.strftime("%m-%e-%y %H:%M")%></p>
     <% else %>
       <p>Last Sleep: <%=@pingochi.slept_at%></p>
     <% end %>
+
     <p>UTI now?: <%=@pingochi.uti?%></p>
+    <% if @pingochi.uti_at != nil %>
+    <p>Last UTI: <%=@pingochi.uti_at.strftime("%m-%e-%y %H:%M")%></p>
+    <% else %>
     <p>Last UTI: <%=@pingochi.uti_at%></p>
+    <% end %>
 </div>

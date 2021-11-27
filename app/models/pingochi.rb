@@ -1,6 +1,9 @@
 class Pingochi < ApplicationRecord
   belongs_to :user
   has_many :inventories
+  has_many :battles_as_pingochi1, foreign_key: :pingochi1_id, class_name: "Battle"
+  has_many :battles_as_pingochi2, foreign_key: :pingochi2_id, class_name: "Battle"
+  has_many :battles_as_pingochi_winner, foreign_key: :pingochi_winner_id, class_name: "Battle"
 
   # Cannot create a new `Pingochi` without a `name`
   validates :name, presence: true
