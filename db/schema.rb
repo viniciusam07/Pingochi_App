@@ -42,14 +42,6 @@ ActiveRecord::Schema.define(version: 2021_11_26_174400) do
     t.index ["category_id"], name: "index_items_on_category_id"
   end
 
-  create_table "pingochi_friendships", force: :cascade do |t|
-    t.bigint "pingochi_id", null: false
-    t.integer "pingochi_friend_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["pingochi_id"], name: "index_pingochi_friendships_on_pingochi_id"
-  end
-
   create_table "pingochis", force: :cascade do |t|
     t.string "name", null: false
     t.boolean "live", default: true, null: false
@@ -61,8 +53,8 @@ ActiveRecord::Schema.define(version: 2021_11_26_174400) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "slept_at"
-    t.datetime "uti_at"
     t.string "specie"
+    t.datetime "uti_at"
     t.bigint "item_id"
     t.integer "strength_skill", default: 0, null: false
     t.integer "inteligence_skill", default: 0, null: false
@@ -96,7 +88,6 @@ ActiveRecord::Schema.define(version: 2021_11_26_174400) do
   add_foreign_key "inventories", "pingochis"
   add_foreign_key "inventories", "users"
   add_foreign_key "items", "categories"
-  add_foreign_key "pingochi_friendships", "pingochis"
   add_foreign_key "pingochis", "items"
   add_foreign_key "pingochis", "users"
   add_foreign_key "wallets", "users"
