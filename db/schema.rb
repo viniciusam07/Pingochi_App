@@ -36,6 +36,17 @@ ActiveRecord::Schema.define(version: 2021_11_27_175301) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "battles", force: :cascade do |t|
+    t.bigint "pingochi1_id", null: false
+    t.bigint "pingochi2_id", null: false
+    t.bigint "pingochi_winner_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pingochi1_id"], name: "index_battles_on_pingochi1_id"
+    t.index ["pingochi2_id"], name: "index_battles_on_pingochi2_id"
+    t.index ["pingochi_winner_id"], name: "index_battles_on_pingochi_winner_id"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -63,6 +74,14 @@ ActiveRecord::Schema.define(version: 2021_11_27_175301) do
     t.index ["category_id"], name: "index_items_on_category_id"
   end
 
+  create_table "pingochi_friendships", force: :cascade do |t|
+    t.bigint "pingochi_id", null: false
+    t.integer "pingochi_friend_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pingochi_id"], name: "index_pingochi_friendships_on_pingochi_id"
+  end
+
   create_table "pingochis", force: :cascade do |t|
     t.string "name", null: false
     t.boolean "live", default: true, null: false
@@ -74,8 +93,8 @@ ActiveRecord::Schema.define(version: 2021_11_27_175301) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "slept_at"
-    t.string "specie"
     t.datetime "uti_at"
+    t.string "specie"
     t.bigint "item_id"
     t.integer "strength_skill", default: 0, null: false
     t.integer "inteligence_skill", default: 0, null: false
@@ -107,10 +126,14 @@ ActiveRecord::Schema.define(version: 2021_11_27_175301) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "battles", "pingochis", column: "pingochi1_id"
+  add_foreign_key "battles", "pingochis", column: "pingochi2_id"
+  add_foreign_key "battles", "pingochis", column: "pingochi_winner_id"
   add_foreign_key "inventories", "items"
   add_foreign_key "inventories", "pingochis"
   add_foreign_key "inventories", "users"
   add_foreign_key "items", "categories"
+  add_foreign_key "pingochi_friendships", "pingochis"
   add_foreign_key "pingochis", "items"
   add_foreign_key "pingochis", "users"
   add_foreign_key "wallets", "users"
