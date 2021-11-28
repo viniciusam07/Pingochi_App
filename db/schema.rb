@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(version: 2021_11_27_133553) do
     t.index ["pingochi_winner_id"], name: "index_battles_on_pingochi_winner_id"
   end
 
+  create_table "battles", force: :cascade do |t|
+    t.bigint "pingochi1_id", null: false
+    t.bigint "pingochi2_id", null: false
+    t.bigint "pingochi_winner_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pingochi1_id"], name: "index_battles_on_pingochi1_id"
+    t.index ["pingochi2_id"], name: "index_battles_on_pingochi2_id"
+    t.index ["pingochi_winner_id"], name: "index_battles_on_pingochi_winner_id"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -103,6 +114,7 @@ ActiveRecord::Schema.define(version: 2021_11_27_133553) do
     t.index ["user_id"], name: "index_wallets_on_user_id"
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "battles", "pingochis", column: "pingochi1_id"
   add_foreign_key "battles", "pingochis", column: "pingochi2_id"
   add_foreign_key "battles", "pingochis", column: "pingochi_winner_id"
