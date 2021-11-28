@@ -6,20 +6,24 @@
   <% end %>
   <div class="pingochis">
     <div class="cards">
-      <% @pingochis.each do |pingochi|  %>
-        <div class="card-pingochi nes-container">
-          <div class="card-pingochi-infos">
-            <div>
-              <h2><%= link_to "#{pingochi.name}", pingochi_path(pingochi) %></h2>
-              <p><%= pingochi.gender %></p>
-              <p><%= pingochi.age %></p>
-              <p><%= pingochi.specie %></p>
+      <% if @pingochis.empty? %>
+      <% else %>
+        <% @pingochis.each do |pingochi|  %>
+          <div class="card-pingochi nes-container">
+            <div class="card-pingochi-infos">
+              <div>
+                <h2><%= link_to "#{pingochi.name}", pingochi_path(pingochi) %></h2>
+                <p><%= pingochi.gender %></p>
+                <p><%= pingochi.age %></p>
+                <p><%= pingochi.specie %></p>
+              </div>
+              <p class="card-pingochi-user-nickname"><%= pingochi.user.nick_name %></p>
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "card-pingochi-user avatar-bordered" %>
             </div>
-            <p class="card-pingochi-user-nickname"><%= pingochi.user.nick_name %></p>
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "card-pingochi-user avatar-bordered" %>
           </div>
-        </div>
+        <% end %>
       <% end %>
+
     </div>
   </div>
 </div>
