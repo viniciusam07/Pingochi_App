@@ -10,12 +10,7 @@ Rails.application.routes.draw do
     patch 'strength', to: 'pingochis#strength'
     patch 'inteligence', to: 'pingochis#inteligence'
     patch 'speed', to: 'pingochis#speed'
-    get 'opponents', to: 'pingochis#opponents'
     resources :items, only: [:index]
     resources :inventories, only: [:create]
-
-    resources :opponents, only: [] do
-      resources :battles, only: [:new, :create, :show]
-    end
   end
 end

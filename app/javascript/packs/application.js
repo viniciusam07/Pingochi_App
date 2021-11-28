@@ -27,7 +27,8 @@ require("channels")
 import "bootstrap";
 import { initSweetalert } from '../plugins/init_sweetalert';
 import { speciesSelector } from '../plugins/species_selector';
-import fight from './fight';
+
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -38,7 +39,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   speciesSelector();
   initSweetalert();
-  fight();
 
 });
 
