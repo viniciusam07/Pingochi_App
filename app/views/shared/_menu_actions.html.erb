@@ -1,17 +1,19 @@
 <div class="nes-container with-title is-centered button-actions">
   <p class="title">Menu</p>
 
-  <button id="sweet-alert-slap" class="nes-btn is-warning"">Slap</button>
+  <button id="sweet-alert-slap" class="nes-btn is-warning">Slap</button>
   <%=link_to "", pingochi_slap_path(@pingochi), method: :patch, id: "slap-action" , class: "hidden" %>
 
-  <button id="sweet-alert-feed" class="nes-btn is-warning"">Feed</button>
+  <button id="sweet-alert-feed" class="nes-btn is-warning">Feed</button>
   <%=link_to "", pingochi_feed_path(@pingochi), method: :patch, id: "feed-action" , class: "hidden"%>
 
   <%=link_to "sleep", pingochi_sleep_path(@pingochi), class: "nes-btn is-warning", method: :patch%>
 
   <%=link_to "Market", pingochi_items_path(@pingochi), class: "nes-btn is-warning"%>
 
-  <button id="sweet-alert-fish" class="nes-btn is-warning"">Fish</button>
+  <button id="sweet-alert-fish" class="nes-btn is-warning">Fish</button>
   <%=link_to "", pingochi_fish_path(@pingochi), method: :patch, id: "fish-action" , class: "hidden"%>
+
+  <%= link_to "PvP", pingochi_opponents_path(@pingochi), class: "nes-btn is-warning" %>
 
 </div>
