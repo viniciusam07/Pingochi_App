@@ -60,7 +60,7 @@ class PingochisController < ApplicationController
 
   def feed
     @pingochi = Pingochi.find(params[:pingochi_id])
-    if @pingochi.energy >=100
+    if @pingochi.energy >= 100
       redirect_to pingochi_path(@pingochi)
       flash[:notice] = 'Your Pingochi is already fed!'
     else
@@ -123,6 +123,11 @@ class PingochisController < ApplicationController
   def opponents
     @pingochi = Pingochi.find(params[:pingochi_id])
     @opponent_pingochis = Pingochi.where.not(id: @pingochi.id)
+  end
+
+  def couples
+    @pingochi = Pingochi.find(params[:pingochi_id])
+    @couple_pingochis = Pingochi.where.not(id: @pingochi.id) && Pingochi.where.not(gender: @pingochi.gender)
   end
 
   private

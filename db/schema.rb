@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_27_175301) do
+ActiveRecord::Schema.define(version: 2021_11_30_012151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,16 @@ ActiveRecord::Schema.define(version: 2021_11_27_175301) do
     t.index ["category_id"], name: "index_items_on_category_id"
   end
 
+  create_table "matings", force: :cascade do |t|
+    t.bigint "pingochi1_id", null: false
+    t.bigint "pingochi2_id", null: false
+    t.boolean "mating_status", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pingochi1_id"], name: "index_matings_on_pingochi1_id"
+    t.index ["pingochi2_id"], name: "index_matings_on_pingochi2_id"
+  end
+
   create_table "pingochi_friendships", force: :cascade do |t|
     t.bigint "pingochi_id", null: false
     t.integer "pingochi_friend_id"
@@ -133,6 +143,8 @@ ActiveRecord::Schema.define(version: 2021_11_27_175301) do
   add_foreign_key "inventories", "pingochis"
   add_foreign_key "inventories", "users"
   add_foreign_key "items", "categories"
+  add_foreign_key "matings", "pingochis", column: "pingochi1_id"
+  add_foreign_key "matings", "pingochis", column: "pingochi2_id"
   add_foreign_key "pingochi_friendships", "pingochis"
   add_foreign_key "pingochis", "items"
   add_foreign_key "pingochis", "users"

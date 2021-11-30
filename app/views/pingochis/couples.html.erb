@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="pingochis">
+    <div class="cards">
+
+      <% @couple_pingochis.each do |couple_pingochi|  %>
+        <div class="card-pingochi nes-container">
+          <div class="card-pingochi-infos">
+
+            <div>
+              <h2><%= link_to "#{couple_pingochi.name}", new_pingochi_couple_mating_path(@pingochi, couple_pingochi) %></h2>
+              <p><%= couple_pingochi.gender %></p>
+              <p><%= couple_pingochi.age %></p>
+              <p><%= couple_pingochi.specie %></p>
+            </div>
+
+            <p class="card-pingochi-user-nickname"><%= couple_pingochi.user.nick_name %></p>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "card-pingochi-user avatar-bordered" %>
+
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

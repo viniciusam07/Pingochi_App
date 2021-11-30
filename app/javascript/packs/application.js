@@ -28,6 +28,7 @@ import "bootstrap";
 import { initSweetalert } from '../plugins/init_sweetalert';
 import { speciesSelector } from '../plugins/species_selector';
 import fight from './fight';
+import love from './love';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -39,7 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   speciesSelector();
   initSweetalert();
   fight();
-
+  love();
 });
 
 import "controllers"
