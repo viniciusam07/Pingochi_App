@@ -1,36 +1,23 @@
-#pingochi-chick-stay {
-  height: 15px;
-  width: 364px;
-  background: url("../../images/Pengochi_Sprite_Chick_Walk.png")
-    0px 0px;
-  animation: play 0.8s steps(12) infinite;
-}
-@keyframes play {
-  100% {
-    background-position: -13px;
-  }
-}
-
-#sprite-image {
-  height: 325px;
-  width: 184px;
-  background: url("https://webisora.com/wp-content/uploads/2018/07/capguy-walk-1472.png")
-    0px 0px;
-  animation: play 0.8s steps(8) infinite;
-}
-@keyframes play {
-  100% {
-    background-position: -1472px;
-  }
-}
 
 .pingochi-avatar {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
   border-radius: 50%;
   &.selected {
     border: 2px;
-    border-color: rgb(99, 7, 88);
+    border-color: rgb(243, 146, 55);
     border-style: solid;
+    border-width: thick;
+    image-rendering: pixelated;
   }
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.align-center {
+  align-self: center;
 }
