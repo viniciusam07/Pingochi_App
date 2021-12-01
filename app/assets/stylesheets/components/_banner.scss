@@ -1,10 +1,11 @@
 .banner {
   background-size: cover;
-  background-image: url;
+  background-image: asset-url('banner_home.gif');
   background-position: center;
   padding: 150px 0;
   text-align: center;
   margin-bottom: 18px;
+  position: relative;
 
   & h1 {
     margin: 0;
@@ -20,5 +21,11 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+  & .penguin-image-banner {
+    position: absolute;
+    right: 16px;
+    top: -20px;
+    width: 40px;
   }
 }
