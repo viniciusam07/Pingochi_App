@@ -2,7 +2,7 @@
   background-size: cover;
   background-image: asset-url('banner_home.gif');
   background-position: center;
-  padding: 150px 0;
+  padding-top: 150px;
   text-align: center;
   margin-bottom: 18px;
   position: relative;
@@ -23,9 +23,8 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   }
   & .penguin-image-banner {
-    position: absolute;
-    right: 16px;
-    top: -20px;
     width: 40px;
+    margin-top: 120px;
+    vertical-align: bottom;
   }
 }
