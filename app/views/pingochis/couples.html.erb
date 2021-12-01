@@ -14,8 +14,13 @@
             </div>
 
             <p class="card-pingochi-user-nickname"><%= couple_pingochi.user.nick_name %></p>
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "card-pingochi-user avatar-bordered" %>
-
+              <% if couple_pingochi.user.photo.present? %>
+                <%= cl_image_tag couple_pingochi.user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% else %>
+                <a class="navbar-brand" href="#" data-toggle="dropdown">
+                  <%= image_tag "penguin-user-image.png", height: 40, width: 40, crop: :fill %>
+                </a>
+              <% end %>
           </div>
         </div>
       <% end %>
