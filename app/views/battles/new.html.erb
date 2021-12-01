@@ -36,10 +36,12 @@
     </div>
   </div>
 
-<div class="row">
-  <button id="btn-fight" class="nes-btn is-error">Fight!</button>
-  <%= link_to "Fight!", pingochi_opponent_battles_path(@pingochi1, @pingochi2), id: "create-battle-btn", class: "d-none", method: "post" %>
+  <div class="row">
+    <button id="btn-fight" class="nes-btn is-error">Fight!</button>
+    <%= link_to "Fight!", pingochi_opponent_battles_path(@pingochi1, @pingochi2), id: "create-battle-btn", class: "d-none", method: "post" %>
+  </div>
 </div>
+
   <div id="fight" class="d-none">
     <%= image_tag "penguin_fight.gif", size: "100%"  %>
   </div>

@@ -5,7 +5,7 @@
     <%= f.input :name, wrapper_html: { class: 'name' }, required: true %>
 
       <div class="row">
-        <div class="flex-container">
+        <div class="flex-container text-center">
           <% Pingochi::SPECIES.each do |specie|%>
             <div class="col-4 species align-center" data-specie="<%=specie%>">
               <p> <%= specie %> </p>
