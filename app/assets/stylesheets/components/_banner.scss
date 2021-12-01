@@ -6,6 +6,7 @@
   text-align: center;
   margin-bottom: 18px;
   position: relative;
+  image-rendering: pixelated;
 
   & h1 {
     margin: 0;
@@ -18,13 +19,15 @@
   & p {
   margin-top: 40px;
   font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  color: rgb(243, 146, 55);
+  opacity: 1;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
   }
   & .penguin-image-banner {
     width: 40px;
     margin-top: 120px;
     vertical-align: bottom;
+    width: 10%;
+    height: auto;
   }
 }
