@@ -25,10 +25,11 @@ class MatingsController < ApplicationController
   def mating_process(pingochi1, pingochi2)
     @pingochi1_xp = pingochi1.strength_skill + pingochi1.speed_skill + pingochi1.inteligence_skill
     @pingochi2_xp = pingochi2.strength_skill + pingochi2.speed_skill + pingochi2.inteligence_skill
-    if @pingochi1_xp + @pingochi2_xp >= 10
-      @mating_status == true
+    @couple_xp = @pingochi1_xp + @pingochi2_xp
+    if @couple_xp > 10
+      @mating_status = true
     else
-      @mating_status == false
+      @mating_status = false
     end
   end
 end

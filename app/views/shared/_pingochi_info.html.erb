@@ -7,11 +7,11 @@
     <div class = "row">
       <a href="#" class="nes-badge is-icon">
         <span class="is-dark"><i class="nes-icon trophy is-small"></i></span>
-        <span class="is-warning"> XXX </span>
+        <span class="is-warning"> <%= Battle.includes(@pingochi.id).where(pingochi_winner_id: @pingochi.id).count %> </span>
       </a>
       <a href="#" class="nes-badge is-icon">
         <span class="is-dark"><i class="nes-icon heart is-small"></i></span>
-        <span class="is-error">XXX</span>
+        <span class="is-error"><%= Mating.includes(@pingochi.id).where(mating_status: "true").count %></span>
       </a>
     </div>
 
