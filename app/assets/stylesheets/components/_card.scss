@@ -41,7 +41,14 @@
 }
 
 .card-pingochi .card-pingochi-infos {
-  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-pingochi .card-pingochi-bottom {
+  margin-top: 10px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
