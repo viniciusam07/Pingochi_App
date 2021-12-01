@@ -9,7 +9,6 @@
       <% if @pingochis.empty? %>
       <% else %>
         <% @pingochis.each do |pingochi|  %>
-<<<<<<< HEAD
           <div class="card-pingochi nes-container">
             <div class="card-pingochi-infos">
               <div>
@@ -30,21 +29,9 @@
               </div>
               </div>
 
-=======
-        <div class="card-pingochi nes-container">
-          <div class="card-pingochi-infos">
-            <div>
-              <h2><%= link_to "#{pingochi.name}", pingochi_path(pingochi) %></h2>
-              <p><%= pingochi.gender %></p>
-              <p><%= pingochi.age %></p>
-              <p><%= pingochi.specie %></p>
->>>>>>> 0ff1e0e2820875f66fe71ef8a691abef840a4de4
             </div>
-            <p class="card-pingochi-user-nickname"><%= pingochi.user.nick_name %></p>
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "card-pingochi-user avatar-bordered" %>
           </div>
-        </div>
-      <% end %>
+        <% end %>
       <% end %>
 
     </div>
