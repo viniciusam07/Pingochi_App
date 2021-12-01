@@ -7,6 +7,40 @@
   <%= image_tag "pingochi_run.gif", class: "penguin-image-banner" %>
 </div>
 
+<section class="features-icons bg-light text-center home-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <div>
+                      <%= image_tag "money_art.png", class: "features-icons-icon" %>
+                    </div>
+                    <h3>Earn to Play</h3>
+                    <p class=" mb-0">This theme will look great on any device, no matter the size!</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                    <div>
+                      <%= image_tag "ethereum_coin.png", class: "features-icons-icon" %>
+                    </div>
+                    <h3>NFT</h3>
+                    <p class=" mb-0">Featuring the latest build of the new Bootstrap 5 framework!</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                    <div>
+                      <%= image_tag "penguin_pixel.png", class: "features-icons-icon" %>
+                    </div>
+                    <h3>Penguins</h3>
+                    <p class=" mb-0">Ready to use with your own content, or customize the source files!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <div class="container home-section">
   <div class="home-header">
     <h1>The Game</h1>
@@ -16,7 +50,7 @@
   <%= link_to "Create Now", new_pingochi_path, class: "nes-btn is-primary" %>
 </div>
 
-<div class="container home-section-2">
+<div class="container home-section">
   <div class=home-header-2>
     <h1>How Does It Work</h1>
   </div>
@@ -27,7 +61,7 @@
   <%= link_to "Create Now", new_pingochi_path, class: "nes-btn is-primary" %>
 </div>
 
-<div class="container home-section-3">
+<div class="container home-section">
   <div class=home-header-2>
     <h1>Manual</h1>
   </div>
@@ -38,7 +72,39 @@
   <%= link_to "Create Now", new_pingochi_path, class: "nes-btn is-primary" %>
 </div>
 
-<div class="container home-section-4">
+<section class="testimonials text-center bg-light home-section">
+    <div class="container">
+        <h2 class="mb-5">The Team</h2>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                  <%= image_tag "team/vinicius.png", class: "avatar-home-dev rounded-circle mb-3"  %>
+                  <h5>Vinicius</h5>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                  <%= image_tag "team/bianca.png", class: "avatar-home-dev rounded-circle mb-3" %>
+                  <h5>Bianca</h5>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                  <%= image_tag "team/bernardo.png", class: "avatar-home-dev rounded-circle mb-3" %>
+                  <h5>Bernardo</h5>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                  <%= image_tag "team/valle.png", class: "avatar-home-dev rounded-circle mb-3" %>
+                  <h5>Valle</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container home-section">
   <div class=home-header-3>
     <h1>Join us, the Pingochi lifestyle and be welcome to a new free world!</h1>
  </div>
