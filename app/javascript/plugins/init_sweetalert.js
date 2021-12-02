@@ -11,8 +11,8 @@ const initSweetalert = (selector, options = {}, callback = () => { }) => {
 
 initSweetalert('#sweet-alert-slap', {
   title: "Are you sure?",
-  text: "Your pingochi just got a slap!",
-  icon: "https://media.giphy.com/media/ewHSMEx2TtEo8/source.gif",
+  text: "A slap drains 10 energy units!",
+  icon: "https://media.giphy.com/media/ewHSMEx2TtEo8/giphy.gif",
   dangerMode: true,
   buttons: true,
 }, (value) => {
@@ -37,13 +37,26 @@ initSweetalert('#sweet-alert-fish', {
 
 initSweetalert('#sweet-alert-feed', {
   title: "Let's eat something?",
-  text: "Your pingochi will gain +20 of energy",
+  text: "Your pingochi will gain 20 energy units",
   icon: "https://media.giphy.com/media/Ve5J6fIqJ4TFmz6Ene/giphy-downsized-large.gif",
   dangerMode: true,
   buttons: true,
 }, (value) => {
   if (value) {
     const link = document.querySelector('#feed-action');
+    link.click();
+  }
+});
+
+initSweetalert('#sweet-alert-sleep', {
+  title: "Nap time!",
+  text: "Your Pingochi will recovery all energy",
+  icon: "https://media.giphy.com/media/Aot7IKh3ogALK/giphy.gif",
+  dangerMode: true,
+  buttons: true,
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#sleep-action');
     link.click();
   }
 });

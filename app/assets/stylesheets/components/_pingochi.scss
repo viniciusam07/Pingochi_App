@@ -11,7 +11,11 @@
     image-rendering: pixelated;
   }
 }
-
+.pingochi-container {
+  background-image: url(background-pingochi.gif);
+  background-position: center;
+  background-size: cover;
+}
 .flex-container {
   display: flex;
   flex-wrap: wrap;

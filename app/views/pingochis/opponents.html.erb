@@ -1,27 +1,55 @@
 <div class="container">
-  <div class="pingochis">
-    <div class="cards">
-      <% @opponent_pingochis.each do |opponent_pingochi|  %>
-        <div class="card-pingochi nes-container">
-          <div class="card-pingochi-infos">
-            <div>
-              <h2><%= link_to "#{opponent_pingochi.name}", new_pingochi_opponent_battle_path(@pingochi, opponent_pingochi) %></h2>
-              <p><%= opponent_pingochi.gender %></p>
-              <p><%= opponent_pingochi.age %></p>
-              <p><%= opponent_pingochi.specie %></p>
+  <div class="cards">
+    <% @opponent_pingochis.each do |opponent_pingochi|  %>
+
+      <div class="card-pingochi nes-container">
+
+        <div class="d-flex justify-content-between">
+          <div class="d-flex flex-row align-items-center">
+            <div class="ms-2 c-details">
+              <h6 class="mb-0">
+                <%= link_to "#{opponent_pingochi.name.truncate(14)}", new_pingochi_opponent_battle_path(@pingochi, opponent_pingochi) %>
+              </h6>
+              <span><%= opponent_pingochi.specie %></span>
             </div>
-            <p class="card-pingochi-user-nickname"><%= opponent_pingochi.user.nick_name %></p>
-              <% if opponent_pingochi.user.photo.present? %>
-                <%= cl_image_tag opponent_pingochi.user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <% else %>
-                <a class="navbar-brand" href="#" data-toggle="dropdown">
-                  <%= image_tag "penguin-user-image.png", height: 40, width: 40, crop: :fill %>
-                </a>
-              <% end %>
+          </div>
+
+          <div class="d-flex flex-column justify-content-between">
+            <div class="badge-card">
+              <span><%= opponent_pingochi.gender %></span>
+            </div>
+            <div class="badge-card mt-2">
+              <span><%= "#{opponent_pingochi.age}yr" %></span>
+            </div>
           </div>
         </div>
-      <% end %>
-    </div>
+
+        <div class="d-flex justify-content-between">
+          <div class="d-flex flex-row align-items-center">
+            <div class="c-details">
+              <span>
+                <i class="nes-icon trophy is-small"></i><%= Battle.includes(opponent_pingochi.id).where(pingochi_winner_id: opponent_pingochi.id).count %>
+              </span>
+              <span>
+                <i class="fas fa-fist-raised mr-1"></i><%= "#{opponent_pingochi.strength_skill}xp" %>
+              </span>
+              <span>
+                <i class="fas fa-bolt mr-1"></i><%= "#{opponent_pingochi.speed_skill}xp" %>
+              </span>
+              <span>
+                <i class="fas fa-brain mr-1"></i><%= "#{opponent_pingochi.inteligence_skill}xp" %>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <div class="c-details row">
+              <p class="card-pingochi-user-nickname"><%= opponent_pingochi.user.nick_name %></p>
+            </div>
+        </div>
+
+      </div>
+    <% end %>
   </div>
-</div>
 </div>
