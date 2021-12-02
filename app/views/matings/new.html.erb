@@ -1,0 +1,31 @@
+<div class="container" id="new-mating">
+
+  New Mating
+  <h1><%= @pingochi1.name %> S2 <%= @pingochi2.name %></h1>
+  <div class="row">
+    <div class="nes-container with-title">
+      <div class="nes-container with-title is-centered">
+        <%= image_tag "pingochi_peck.gif" %>
+      </div>
+      <p>Specie: <%=@pingochi1.specie%></p>
+      <p>Strength: <%=@pingochi1.strength_skill%>xp</p>
+      <p>Speed: <%=@pingochi1.speed_skill%>xp</p>
+      <p>Inteligence: <%=@pingochi1.inteligence_skill%>xp</p>
+    </div>
+    <div class="nes-container with-title">
+      <div class="nes-container with-title is-centered">
+        <%= image_tag "pingochi_peck_left.gif" %>
+      </div>
+      <p>Specie: <%=@pingochi2.specie%></p>
+      <p>Strength: <%=@pingochi2.strength_skill%>xp</p>
+      <p>Speed: <%=@pingochi2.speed_skill%>xp</p>
+      <p>Inteligence: <%=@pingochi2.inteligence_skill%>xp</p>
+    </div>
+  </div>
+
+  <button id="btn-love" class="nes-btn is-error">MatingS2</button>
+  <%= link_to "Love!", pingochi_couple_matings_path(@pingochi1, @pingochi2), id: "create-mating-btn", class: "d-none", method: "post" %>
+</div>
+  <div id="love" class="d-none">
+    <%= image_tag "penguin_love.gif", size: "100%"  %>
+  </div>

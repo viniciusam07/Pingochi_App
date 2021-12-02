@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="cards">
+    <% @couple_pingochis.each do |couple_pingochi|  %>
+
+      <div class="card-pingochi nes-container">
+
+        <div class="d-flex justify-content-between">
+          <div class="d-flex flex-row align-items-center">
+            <div class="ms-2 c-details">
+              <h6 class="mb-0">
+                <%= link_to "#{couple_pingochi.name.truncate(14)}", new_pingochi_couple_mating_path(@pingochi, couple_pingochi) %>
+              </h6>
+              <span><%= couple_pingochi.specie %></span>
+            </div>
+          </div>
+
+          <div class="d-flex flex-column justify-content-between">
+            <div class="badge-card">
+              <span><%= couple_pingochi.gender %></span>
+            </div>
+            <div class="badge-card mt-2">
+              <span><%= "#{couple_pingochi.age}yr" %></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between">
+          <div class="d-flex flex-row align-items-center">
+            <div class="c-details">
+              <span>
+                <i class="fas fa-fist-raised mr-1"></i><%= "#{couple_pingochi.strength_skill}xp" %>
+              </span>
+              <span>
+                <i class="fas fa-bolt mr-1"></i><%= "#{couple_pingochi.speed_skill}xp" %>
+              </span>
+              <span>
+                <i class="fas fa-brain mr-1"></i><%= "#{couple_pingochi.inteligence_skill}xp" %>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <div class="c-details row">
+              <p class="card-pingochi-user-nickname"><%= couple_pingochi.user.nick_name %></p>
+            </div>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -5,13 +5,16 @@
     <%= f.input :name, wrapper_html: { class: 'name' }, required: true %>
 
       <div class="row">
-      <% Pingochi::SPECIES.each do |specie|%>
-        <div class="col-4 species" data-specie="<%=specie%>">
-          <p> <%= specie %> </p>
-          <%=image_tag "#{specie.downcase.gsub(' ','-')}.jpg", class: "pingochi-avatar"%>
+        <div class="flex-container text-center">
+          <% Pingochi::SPECIES.each do |specie|%>
+            <div class="col-4 species align-center" data-specie="<%=specie%>">
+              <p> <%= specie %> </p>
+              <%=image_tag "#{specie.downcase.gsub(' ','-')}.jpg", class: "pingochi-avatar"%>
+            </div>
+          <% end %>
         </div>
-      <% end %>
       </div>
+
     <%=f.input :specie, as: :hidden%>
     <%= f.button :submit, class: "btn btn-primary", id: "load-pingochi" %>
     <%end%>

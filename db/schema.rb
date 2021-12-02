@@ -10,10 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_26_174400) do
+ActiveRecord::Schema.define(version: 2021_11_30_012151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "battles", force: :cascade do |t|
+    t.bigint "pingochi1_id", null: false
+    t.bigint "pingochi2_id", null: false
+    t.bigint "pingochi_winner_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pingochi1_id"], name: "index_battles_on_pingochi1_id"
+    t.index ["pingochi2_id"], name: "index_battles_on_pingochi2_id"
+    t.index ["pingochi_winner_id"], name: "index_battles_on_pingochi_winner_id"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -42,12 +74,14 @@ ActiveRecord::Schema.define(version: 2021_11_26_174400) do
     t.index ["category_id"], name: "index_items_on_category_id"
   end
 
-  create_table "pingochi_friendships", force: :cascade do |t|
-    t.bigint "pingochi_id", null: false
-    t.integer "pingochi_friend_id"
+  create_table "matings", force: :cascade do |t|
+    t.bigint "pingochi1_id", null: false
+    t.bigint "pingochi2_id", null: false
+    t.boolean "mating_status", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["pingochi_id"], name: "index_pingochi_friendships_on_pingochi_id"
+    t.index ["pingochi1_id"], name: "index_matings_on_pingochi1_id"
+    t.index ["pingochi2_id"], name: "index_matings_on_pingochi2_id"
   end
 
   create_table "pingochis", force: :cascade do |t|
@@ -61,8 +95,8 @@ ActiveRecord::Schema.define(version: 2021_11_26_174400) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "slept_at"
-    t.datetime "uti_at"
     t.string "specie"
+    t.datetime "uti_at"
     t.bigint "item_id"
     t.integer "strength_skill", default: 0, null: false
     t.integer "inteligence_skill", default: 0, null: false
@@ -80,6 +114,7 @@ ActiveRecord::Schema.define(version: 2021_11_26_174400) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "nick_name"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -92,11 +127,16 @@ ActiveRecord::Schema.define(version: 2021_11_26_174400) do
     t.index ["user_id"], name: "index_wallets_on_user_id"
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "battles", "pingochis", column: "pingochi1_id"
+  add_foreign_key "battles", "pingochis", column: "pingochi2_id"
+  add_foreign_key "battles", "pingochis", column: "pingochi_winner_id"
   add_foreign_key "inventories", "items"
   add_foreign_key "inventories", "pingochis"
   add_foreign_key "inventories", "users"
   add_foreign_key "items", "categories"
-  add_foreign_key "pingochi_friendships", "pingochis"
+  add_foreign_key "matings", "pingochis", column: "pingochi1_id"
+  add_foreign_key "matings", "pingochis", column: "pingochi2_id"
   add_foreign_key "pingochis", "items"
   add_foreign_key "pingochis", "users"
   add_foreign_key "wallets", "users"

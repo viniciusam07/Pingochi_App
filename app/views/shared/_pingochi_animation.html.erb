@@ -1,6 +1,6 @@
-<div class="nes-container with-title is-centered">
+<div class="nes-container with-title is-centered pingochi-container">
   <% if @pingochi.age <= 1%>
-    <%= image_tag "egg.jpg" %>
+    <%= image_tag "egg.png" %>
   <% elsif @pingochi.age.between?(2, 4)%>
     <%= image_tag "pingochi_chick_chill.gif" %>
   <% elsif @pingochi.age.between?(5, 10) && @pingochi.sleep? == true %>

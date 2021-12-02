@@ -6,20 +6,34 @@
   <% end %>
   <div class="pingochis">
     <div class="cards">
-      <% @pingochis.each do |pingochi|  %>
-        <div class="card-pingochi nes-container">
-          <div class="card-pingochi-infos">
-            <div>
-              <h2><%= link_to "#{pingochi.name}", pingochi_path(pingochi) %></h2>
-              <p><%= pingochi.gender %></p>
-              <p><%= pingochi.age %></p>
-              <p><%= pingochi.specie %></p>
+      <% if @pingochis.empty? %>
+      <% else %>
+        <% @pingochis.each do |pingochi|  %>
+          <div class="card-pingochi nes-container">
+            <div class="card-pingochi-infos">
+              <div>
+                <h2><%= link_to "#{pingochi.name}", pingochi_path(pingochi) %></h2>
+                <p><%= pingochi.gender %></p>
+                <p><%= pingochi.age %></p>
+              <div class="card-pingochi-bottom">
+
+                <p><%= pingochi.specie %></p>
+                <p class="card-pingochi-user-nickname"><%= pingochi.user.nick_name %></p>
+              <% if pingochi.user.photo.present? %>
+                <%= cl_image_tag pingochi.user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% else %>
+                <a class="navbar-brand" href="#" data-toggle="dropdown">
+                  <%= image_tag "penguin-user-image.png", height: 40, width: 40, crop: :fill %>
+                </a>
+              <% end %>
+              </div>
+              </div>
+
             </div>
-            <p class="card-pingochi-user-nickname"><%= pingochi.user.nick_name %></p>
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "card-pingochi-user avatar-bordered" %>
           </div>
-        </div>
+        <% end %>
       <% end %>
+
     </div>
   </div>
 </div>
