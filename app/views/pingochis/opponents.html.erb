@@ -28,6 +28,9 @@
           <div class="d-flex flex-row align-items-center">
             <div class="c-details">
               <span>
+                <i class="nes-icon trophy is-small"></i><%= Battle.includes(opponent_pingochi.id).where(pingochi_winner_id: opponent_pingochi.id).count %>
+              </span>
+              <span>
                 <i class="fas fa-fist-raised mr-1"></i><%= "#{opponent_pingochi.strength_skill}xp" %>
               </span>
               <span>
