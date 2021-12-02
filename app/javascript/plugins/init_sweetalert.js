@@ -12,7 +12,7 @@ const initSweetalert = (selector, options = {}, callback = () => { }) => {
 initSweetalert('#sweet-alert-slap', {
   title: "Are you sure?",
   text: "A slap drains 10 energy units!",
-  icon: "https://media.giphy.com/media/ewHSMEx2TtEo8/source.gif",
+  icon: "https://media.giphy.com/media/ewHSMEx2TtEo8/giphy.gif",
   dangerMode: true,
   buttons: true,
 }, (value) => {
