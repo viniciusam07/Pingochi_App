@@ -48,6 +48,19 @@ initSweetalert('#sweet-alert-feed', {
   }
 });
 
+initSweetalert('#sweet-alert-sleep', {
+  title: "Nap time!",
+  text: "Your Pingochi will recovery all energy",
+  icon: "https://media.giphy.com/media/Aot7IKh3ogALK/giphy.gif",
+  dangerMode: true,
+  buttons: true,
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#sleep-action');
+    link.click();
+  }
+});
+
 initSweetalert('#sweet-alert-speed', {
   title: "Hey Ho! Let's Go!",
   text: "Your pingochi will increase the speed skill",
