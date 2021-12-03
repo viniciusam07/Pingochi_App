@@ -44,3 +44,7 @@ document.addEventListener('turbolinks:load', () => {
   fight();
   love();
 });
+
+document.addEventListener('load', () => {
+  initSweetalert();
+});
