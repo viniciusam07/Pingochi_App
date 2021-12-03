@@ -25,6 +25,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "controllers";
 import { initSweetalert } from '../plugins/init_sweetalert';
 import { speciesSelector } from '../plugins/species_selector';
 import fight from './fight';
@@ -37,10 +38,13 @@ import love from './love';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  console.log("Aqui deu bom")
   speciesSelector();
   initSweetalert();
   fight();
   love();
 });
 
-import "controllers"
+document.addEventListener('load', () => {
+  initSweetalert();
+});

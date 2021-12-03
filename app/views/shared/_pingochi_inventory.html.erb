@@ -1,13 +1,13 @@
 <div class="nes-container with-title">
   <p class="title">Inventory</p>
-    <div class="lists">
-      <ul class="nes-list is-disc">
-        <% @pingochi.inventories.each do |inventory| %>
-          <li>
-            Name: <%= inventory.item.name %>
-            Category: <%= inventory.item.category.name %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+  <div class="lists">
+    <ul class="nes-list is-disc">
+      <% @pingochi.inventories.each do |inventory| %>
+        <li>
+          Name: <%= inventory.item.name %>
+          Category: <%= inventory.item.category.name %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>

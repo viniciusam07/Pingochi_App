@@ -21,8 +21,8 @@
 
     <p>UTI now?: <%=@pingochi.uti?%></p>
     <% if @pingochi.uti_at != nil %>
-    <p>Last UTI: <%=@pingochi.uti_at.strftime("%m-%e-%y %H:%M")%></p>
+      <p>Last UTI: <%=@pingochi.uti_at.strftime("%m-%e-%y %H:%M")%></p>
     <% else %>
-    <p>Last UTI: <%=@pingochi.uti_at%></p>
+      <p>Last UTI: <%=@pingochi.uti_at%></p>
     <% end %>
 </div>
