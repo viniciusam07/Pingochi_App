@@ -1,8 +1,8 @@
-<div class="container" id="new-battle">
+<div class="container mt-2" id="new-battle">
 
   New Battle
   <h1><%= @pingochi1.name %> X <%= @pingochi2.name %></h1>
-  <div class="row">
+  <div class="row mt-4">
     <div class="col">
       <div class="nes-container with-title">
         <p class="title"><%= @pingochi1.name %></p>
@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row mt-4">
     <div class="col">
       <div class="nes-container is-centered">
         <%= image_tag "pingochi_peck.gif" %>
@@ -36,7 +36,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row mt-4">
     <button id="btn-fight" class="nes-btn is-error">Fight!</button>
     <%= link_to "Fight!", pingochi_opponent_battles_path(@pingochi1, @pingochi2), id: "create-battle-btn", class: "d-none", method: "post" %>
   </div>
