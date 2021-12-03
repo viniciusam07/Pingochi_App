@@ -16,6 +16,14 @@
   background-position: center;
   background-size: cover;
 }
+
+.mating-container {
+  background-image: url(background_mating.gif);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .flex-container {
   display: flex;
   flex-wrap: wrap;
