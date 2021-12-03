@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container p-4">
   <div data-controller="refresh-pingochi-list">
     <%= form_with url: pingochis_path, method: :get, html: { class: 'mb-5', data: { refresh_pingochi_list_target: 'form' } } do |f| %>
       <%= f.text_field :query,
-                       class: "form-control",
+                       class: "form-control nes-input",
                        placeholder: 'Type pingochi name here',
                        value: params[:query],
                        data: {
