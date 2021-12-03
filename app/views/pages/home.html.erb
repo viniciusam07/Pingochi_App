@@ -5,14 +5,6 @@
     <p>Change your life! Learn how to create and care for a new pet!</p>
   </div>
   <%= image_tag "pingochi_run.gif", class: "penguin-image-banner" %>
-  </div>
-
-<div class="container home-section">
-  <div class="home-header">
-    <p>users:<%= @users %></p>
-    <p>total_fishcoins:<%= @total_fishcoins %></p>
-    <p>fishcoins_to_currency:<%= @fishcoins_to_currency %></p>
-  </div>
 </div>
 
 <section class="features-icons bg-light text-center home-section">
@@ -20,7 +12,7 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                    <div>
+                    <div class= "mb-4">
                       <%= image_tag "money_art.png", class: "features-icons-icon" %>
                     </div>
                     <h3>Earn to Play</h3>
@@ -29,7 +21,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                    <div>
+                    <div class= "mb-4">
                       <%= image_tag "ethereum_coin.png", class: "features-icons-icon" %>
                     </div>
                     <h3>NFT</h3>
@@ -38,7 +30,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                    <div>
+                    <div class= "mb-4">
                       <%= image_tag "penguin_pixel.png", class: "features-icons-icon" %>
                     </div>
                     <h3>Penguins</h3>
@@ -70,6 +62,14 @@
 </div>
 
 <div class="container home-section">
+  <div class="home-header">
+    <p>Users:<%= @users %></p>
+    <p>Fishcoins mined:<%= @total_fishcoins %></p>
+    <p>Fishcoin Marketcap:<%= @fishcoins_to_currency %></p>
+  </div>
+</div>
+
+<div class="container home-section">
   <div class=home-header>
     <h1>Manual</h1>
   </div>
@@ -81,8 +81,8 @@
 </div>
 
 <section class="text-center bg-light home-section">
-    <div class="container">
-        <h2 class="mb-5">The Team</h2>
+    <div class="container home-header">
+        <h1 class="mb-4">The Team</h1>
         <div class="row">
             <div class="col-lg-3">
                 <div class="mx-auto mb-5 mb-lg-0">
