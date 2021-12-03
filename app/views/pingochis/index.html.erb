@@ -6,10 +6,11 @@
                        placeholder: 'Type pingochi name here',
                        value: params[:query],
                        data: {
-                        refresh_pingochi_list_target: 'searchInput',
-                        action: "keyup->refresh-pingochi-list#update"
+                       refresh_pingochi_list_target: 'searchInput',
+                       action: "keyup->refresh-pingochi-list#update"
                       } %>
-    <% end %>
+  <% end %>
+  <% if @pingochis.present? %>
 
     <%= form_with url: pingochis_path, method: :get, html: { class: 'mb-5', data: { refresh_pingochi_list_target: 'form' } } do |f| %>
       <%= f.select :gender, [["male", "male"], ["female", "female"], ["",""]], selected: "",
@@ -18,7 +19,15 @@
                       action: "change->refresh-pingochi-list#update"
                       } %>
     <% end %>
+  <% end %>
 
-    <%= render "shared/pingochi_list", pingochis: @pingochis %>
+    <% if @pingochis.empty? %>
+    <div class="container d-flex align-items-center justify-content-center flex-column" >
+      <h4 class="mb-5"> There are no pingochis created yet!!</h4>
+        <%= image_tag "penguin_cry.gif" %>
+    </div>
+    <% else %>
+      <%= render "shared/pingochi_list", pingochis: @pingochis %>
+    <% end %>
   </div>
 </div>
