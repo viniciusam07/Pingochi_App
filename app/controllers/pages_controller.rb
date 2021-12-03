@@ -8,5 +8,6 @@ class PagesController < ApplicationController
       @total_fishcoins += wallet.fishcoin_amount
     end
     @fishcoins_to_currency = @total_fishcoins * 17.35
+
   end
 end
