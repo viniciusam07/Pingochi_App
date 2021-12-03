@@ -4,7 +4,7 @@
     <p>Specie: <%=@pingochi.specie%></p>
     <p>Gender: <%=@pingochi.gender%></p>
     <p>NFT Chain: <%=@pingochi.nft%></p>
-    <div class = "row">
+    <div class = "row justify-content-between mt-2">
       <a href="#" class="nes-badge is-icon">
         <span class="is-dark"><i class="nes-icon trophy is-small"></i></span>
         <span class="is-warning"> <%= Battle.includes(@pingochi.id).where(pingochi_winner_id: @pingochi.id).count %> </span>
@@ -14,5 +14,4 @@
         <span class="is-error"><%= Mating.includes(mating_status: "true").where(pingochi1_id:@pingochi.id).or(Mating.includes(mating_status: "true").where(pingochi2_id:@pingochi.id)).count %></span>
       </a>
     </div>
-
 </div>

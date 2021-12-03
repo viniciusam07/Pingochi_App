@@ -752,6 +752,10 @@ input[type="checkbox"] {
           user-select: none;
   color: #212529;
   background-color: #fff;
+	flex-grow: 1;
+	font-size: 0.8em;
+  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 @media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
