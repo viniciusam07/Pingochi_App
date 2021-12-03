@@ -7,9 +7,13 @@
   <%= image_tag "pingochi_run.gif", class: "penguin-image-banner" %>
   </div>
 
-<p>users:<%= @users %></p>
-<p>total_fishcoins:<%= @total_fishcoins %></p>
-<p>fishcoins_to_currency:<%= @fishcoins_to_currency %></p>
+<div class="container home-section">
+  <div class="home-header">
+    <p>users:<%= @users %></p>
+    <p>total_fishcoins:<%= @total_fishcoins %></p>
+    <p>fishcoins_to_currency:<%= @fishcoins_to_currency %></p>
+  </div>
+</div>
 
 <section class="features-icons bg-light text-center home-section">
     <div class="container">
@@ -55,7 +59,7 @@
 </div>
 
 <div class="container home-section">
-  <div class=home-header-2>
+  <div class=home-header>
     <h1>How it works</h1>
   </div>
   <p>First of all, sing up! And choose a penguin specimen, give it a creative nickname and take good care of it to see it grow.</p>
@@ -66,7 +70,7 @@
 </div>
 
 <div class="container home-section">
-  <div class=home-header-2>
+  <div class=home-header>
     <h1>Manual</h1>
   </div>
   <p>Sing up! And choose a penguin specimen, give it a good name and take care like a baby.</p>
@@ -109,7 +113,7 @@
 </section>
 
 <div class="container home-section">
-  <div class=home-header-3>
+  <div class=home-header>
     <h1>Join the Pingochi lifestyle and make the best of a New Free World!</h1>
     <%= link_to "Create Now", new_pingochi_path, class: "nes-btn is-primary" %>
   </div>
