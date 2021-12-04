@@ -62,10 +62,38 @@
 </div>
 
 <div class="container home-section">
-  <div class="home-header">
-    <p>Users:<%= @users %></p>
-    <p>Fishcoins mined:<%= @total_fishcoins %></p>
-    <p>Fishcoin Marketcap:<%= @fishcoins_to_currency %></p>
+  <div class="home-header"></div>
+    <div class="d-flex">
+      <div class= "p-5 m-3'">
+        <div>Pingochi</div>
+        <div>Statistics</div>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <div class="text-center p-5 m-3 rounded shadow d-flex justify-content-center align-items-center users-card">
+          <div>
+            <div>Users</div>
+            <div><%= @users %></div>
+          </div>
+        </div>
+
+        <div class="text-center p-5 m-3 rounded shadow d-flex justify-content-center align-items-center fishcoin-card">
+          <div>
+            <div class="text-wrap">Fishcoins</div>
+            <div>Mined</div>
+            <div><%= @total_fishcoins %></div>
+          </div>
+        </div>
+
+        <div class="text-center p-5 m-3 rounded shadow d-flex justify-content-center align-items-center fishcoin_marketcap-card">
+          <div>
+            <div>Fishcoins</div>
+            <div>Marketcap</div>
+            <div><%= @fishcoins_to_currency %></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -73,10 +101,10 @@
   <div class=home-header>
     <h1>Manual</h1>
   </div>
-  <p>Sing up! And choose a penguin specimen, give it a good name and take care like a baby.</p>
-  <p>You should take care some obligations like feeding, rest, have some fun and teach fishing.</p>
-  <p>Each activity you developed allows you to accumulate points, that can be converted into Fishcoins!
-  The money of the future! Descentralized, protected from governments and tax-free!</p>
+  <p>First of all, sing up! And choose a penguin specimen, give it a creative nickname and take good care of it to see it grow.</p>
+  <p>Just like us, they need to meet their basic needs in order to survive and develop. So keep an eye on your Pingochi's health and perform tasks like fishing, feeding, resting, and specially having fun!</p>
+  <p>Each activity you complete allows you to accumulate points, that can be converted into Fishcoins - the money of
+  the future! Descentralized, far from any greedy government reach and tax-free!</p>
   <%= link_to "Create Now", new_pingochi_path, class: "nes-btn is-primary" %>
 </div>
 
