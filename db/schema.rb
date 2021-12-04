@@ -95,8 +95,8 @@ ActiveRecord::Schema.define(version: 2021_11_30_012151) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "slept_at"
-    t.string "specie"
     t.datetime "uti_at"
+    t.string "specie"
     t.bigint "item_id"
     t.integer "strength_skill", default: 0, null: false
     t.integer "inteligence_skill", default: 0, null: false

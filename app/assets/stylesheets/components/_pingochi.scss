@@ -39,3 +39,26 @@
 .align-center {
   align-self: center;
 }
+
+#fight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 150px);
+}
+
+#love {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 150px);
+}
+
+.container2 {
+  text-align: center;
+  padding: 16px;
+  height: calc(100vh - 150px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
