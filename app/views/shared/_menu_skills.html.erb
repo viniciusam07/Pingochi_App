@@ -1,13 +1,13 @@
-<div class="nes-container with-title is-centered button-actions">
+<div class="nes-container with-title is-centered">
   <p class="title">Skills Training</p>
 
-  <button id="sweet-alert-strength" class="nes-btn is-success">Strength Training</button>
+  <button id="sweet-alert-strength" class="nes-btn is-success w-100">Strength</button>
   <%=link_to "", pingochi_strength_path(@pingochi), method: :patch, id: "strength-action" , class: "hidden" %>
 
-  <button id="sweet-alert-speed" class="nes-btn is-success">Speed Training</button>
+  <button id="sweet-alert-speed" class="nes-btn is-success w-100">Speed</button>
   <%=link_to "", pingochi_speed_path(@pingochi), method: :patch, id: "speed-action" , class: "hidden" %>
 
-  <button id="sweet-alert-inteligence" class="nes-btn is-success">Study Training</button>
+  <button id="sweet-alert-inteligence" class="nes-btn is-success w-100">Inteligence</button>
   <%=link_to "", pingochi_inteligence_path(@pingochi), method: :patch, id: "inteligence-action" , class: "hidden" %>
 
 </div>

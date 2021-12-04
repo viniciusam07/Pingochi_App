@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                    <div>
+                    <div class= "mb-4">
                       <%= image_tag "money_art.png", class: "features-icons-icon" %>
                     </div>
                     <h3>Earn to Play</h3>
@@ -21,7 +21,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                    <div>
+                    <div class= "mb-4">
                       <%= image_tag "ethereum_coin.png", class: "features-icons-icon" %>
                     </div>
                     <h3>NFT</h3>
@@ -30,7 +30,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                    <div>
+                    <div class= "mb-4">
                       <%= image_tag "penguin_pixel.png", class: "features-icons-icon" %>
                     </div>
                     <h3>Penguins</h3>
@@ -51,7 +51,7 @@
 </div>
 
 <div class="container home-section">
-  <div class=home-header-2>
+  <div class=home-header>
     <h1>How it works</h1>
   </div>
   <p>First of all, sing up! And choose a penguin specimen, give it a creative nickname and take good care of it to see it grow.</p>
@@ -62,7 +62,15 @@
 </div>
 
 <div class="container home-section">
-  <div class=home-header-2>
+  <div class="home-header">
+    <p>Users:<%= @users %></p>
+    <p>Fishcoins mined:<%= @total_fishcoins %></p>
+    <p>Fishcoin Marketcap:<%= @fishcoins_to_currency %></p>
+  </div>
+</div>
+
+<div class="container home-section">
+  <div class=home-header>
     <h1>Manual</h1>
   </div>
   <p>Sing up! And choose a penguin specimen, give it a good name and take care like a baby.</p>
@@ -73,8 +81,8 @@
 </div>
 
 <section class="text-center bg-light home-section">
-    <div class="container">
-        <h2 class="mb-5">The Team</h2>
+    <div class="container home-header">
+        <h1 class="mb-4">The Team</h1>
         <div class="row">
             <div class="col-lg-3">
                 <div class="mx-auto mb-5 mb-lg-0">
@@ -105,8 +113,8 @@
 </section>
 
 <div class="container home-section">
-  <div class=home-header-3>
-    <h1>Join the Pingochi lifestyle and make the best of a New Free World!</h1>
-    <%= link_to "Create Now", new_pingochi_path, class: "nes-btn is-primary" %>
+  <div class=home-header>
+    <h3>This project was proudly made by the students of batch #688 of the Le Wagon Full Stack Bootcamp with the help of the amazing teachers!</h3>
+    <%= image_tag "lewagon_logo.png", size: "50" %>
   </div>
 </div>
