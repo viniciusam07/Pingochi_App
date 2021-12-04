@@ -6,8 +6,6 @@
   <% end %>
   <div class="pingochis">
     <div class="cards">
-      <% if @pingochis.empty? %>
-      <% else %>
         <% @pingochis.each do |pingochi|  %>
           <div class="card-pingochi nes-container">
             <div class="card-pingochi-infos">
@@ -32,8 +30,6 @@
             </div>
           </div>
         <% end %>
-      <% end %>
-
     </div>
   </div>
 </div>

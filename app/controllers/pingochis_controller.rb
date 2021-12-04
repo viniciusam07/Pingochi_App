@@ -37,11 +37,13 @@ class PingochisController < ApplicationController
 
   def edit
     @pingochi = Pingochi.find(params[:id])
+    flash_alert_if_not_owner
     @items = Item.all
   end
 
   def show
     @pingochi = Pingochi.find(params[:id])
+    flash_alert_if_not_owner
   end
 
   def slap
@@ -134,5 +136,15 @@ class PingochisController < ApplicationController
 
   def pingochi_params
     params.require(:pingochi).permit(:name, :specie)
+  end
+
+  def flash_alert_if_not_owner
+    unless user_is_owner?
+      redirect_to pingochis_path, notice: "This pingochi is not yours!!"
+    end
+  end
+
+  def user_is_owner?
+    @pingochi.user == current_user
   end
 end
