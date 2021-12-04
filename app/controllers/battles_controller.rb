@@ -12,14 +12,14 @@ class BattlesController < ApplicationController
     pingochi_winner = winner(@pingochi1, @pingochi2)
     @battle = Battle.new(pingochi1: @pingochi1, pingochi2: @pingochi2, pingochi_winner: pingochi_winner)
     if @battle.save
-      render 'show'
+      redirect_to pingochi_opponent_battle_path(params[:pingochi_id], params[:opponent_id], @battle)
     else
       render 'new'
     end
   end
 
   def show
-    @battle =Battle.find(params[:id])
+    @battle = Battle.find(params[:id])
   end
 
   def winner(pingochi1, pingochi2)
