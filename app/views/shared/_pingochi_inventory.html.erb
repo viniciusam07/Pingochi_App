@@ -1,13 +1,17 @@
 <div class="nes-container with-title">
   <p class="title">Inventory</p>
   <div class="lists">
-    <ul class="nes-list is-disc">
+    <div class="nes-list is-disc">
       <% @pingochi.inventories.each do |inventory| %>
-        <li>
-          Name: <%= inventory.item.name %>
-          Category: <%= inventory.item.category.name %>
-        </li>
+        <div class="d-flex mb-2" >
+          <div class="mr-3">
+            <%= image_tag("items/#{inventory.item.image_url }", class: 'image', size: "50x50") %>
+          </div>
+          <div>
+            <%= inventory.item.name %>
+          </div>
+        </div>
       <% end %>
-    </ul>
+    </div>
   </div>
 </div>
