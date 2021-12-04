@@ -82,32 +82,38 @@ class Pingochi < ApplicationRecord
   end
 
   def strength
+    self.strength_skill += rand(1..5)
     self.energy -= 10
-    self.save
     if self.energy.zero?
       self.uti
     end
-    self.strength_skill += rand(1..5)
+    if self.strength_skill > 100
+      self.strength_skill = 100
+    end
     self.save
   end
 
   def inteligence
+    self.inteligence_skill += rand(1..5)
     self.energy -= 10
-    self.save
     if self.energy.zero?
       self.uti
     end
-    self.inteligence_skill += rand(1..5)
+    if self.inteligence_skill > 100
+      self.inteligence_skill = 100
+    end
     self.save
   end
 
   def speed
+    self.speed_skill += rand(1..5)
     self.energy -= 10
-    self.save
     if self.energy.zero?
       self.uti
     end
-    self.speed_skill += rand(1..5)
+    if self.speed_skill > 100
+      self.speed_skill = 100
+    end
     self.save
   end
 
