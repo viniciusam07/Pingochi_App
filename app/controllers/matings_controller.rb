@@ -19,6 +19,8 @@ class MatingsController < ApplicationController
   end
 
   def show
+    @pingochi1 = Pingochi.find(params[:pingochi_id])
+    @pingochi2 = Pingochi.find(params[:couple_id])
     @mating = Mating.find(params[:id])
   end
 
