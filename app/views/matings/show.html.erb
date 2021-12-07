@@ -1,7 +1,16 @@
 <div class="container2">
   <div>
-    <p>It's about love....<br></p>
-    <h1>And the mating is...<%= @mating.mating_status %><br></h1>
-    <i class="nes-icon is-large heart"></i>
+    <% if @mating.mating_status = true %>
+      <h2> <span class="nes-text is-primary"><%= @pingochi1.name %></span> used the best pickup lines on <span class="nes-text is-error"><%= @pingochi2.name %></span><br><br></h2>
+      <h2>And...<br></h2>
+      <h1>It WORKED!<br><br></h1>
+      <h2>What a charmer! Congratulations on forming a new couple!<br><br></h2>
+      <i class="nes-icon is-large heart"></i>
+    <% else %>
+      <h2> <span class="nes-text is-primary"><%= @pingochi1.name %></span> used the best pickup lines on <span class="nes-text is-primary"><%= @pingochi2.name %></span><br><br></h2>
+      <h2>And...<br></h2>
+      <h1>It's not very effective...<br><br></h1>
+      <h2>Seems your Pingochi must work on it's skills<br>to have greater chances of finding a partner...</h2>
+    <% end %>
   </div>
 </div>
