@@ -11,7 +11,7 @@
       </a>
       <a href="#" class="nes-badge is-icon">
         <span class="is-dark"><i class="nes-icon heart is-small"></i></span>
-        <span class="is-error"><%= Mating.includes(mating_status: "true").where(pingochi1_id:@pingochi.id).or(Mating.includes(mating_status: "true").where(pingochi2_id:@pingochi.id)).count %></span>
+        <span class="is-error"><%= @mating_count %></span>
       </a>
     </div>
 </div>
