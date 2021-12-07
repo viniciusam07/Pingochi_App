@@ -12,7 +12,7 @@ class MatingsController < ApplicationController
     mating_status = mating_process(@pingochi1, @pingochi2)
     @mating = Mating.new(pingochi1: @pingochi1, pingochi2: @pingochi2, mating_status: mating_status)
     if @mating.save!
-      redirect_to pingochi_opponent_battle_path(params[:pingochi_id], params[:couple_id], @mating)
+      redirect_to pingochi_couple_mating_path(params[:pingochi_id], params[:couple_id], @mating)
     else
       render 'new'
     end
