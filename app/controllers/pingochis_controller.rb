@@ -43,6 +43,7 @@ class PingochisController < ApplicationController
 
   def show
     @pingochi = Pingochi.find(params[:id])
+    @mating_count = Mating.where("pingochi1_id = :id or pingochi2_id = :id", id: @pingochi.id).where(mating_status: true).count
     flash_alert_if_not_owner
   end
 
