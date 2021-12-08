@@ -1,11 +1,18 @@
-<div class="container mt-2" id="new-mating">
+<div class="container mt-2 " id="new-mating">
 
-  New Mating
-  <h1><span class="nes-text is-primary"><%= @pingochi1.name %></span> <i class="nes-icon is-medium heart"></i> <span class="nes-text is-error"><%= @pingochi2.name %></span></h1>
+  <h1>
+    <span class="nes-text is-primary ">
+      <%= @pingochi1.name %>
+    </span>
+    <i class="nes-icon is-medium heart"></i>
+    <span class="nes-text is-error">
+      <%= @pingochi2.name %>
+    </span>
+  </h1>
 
-  <div class="row mt-4">
+  <div class="row mt-4 d-flex justify-content-center">
 
-    <div class="nes-container">
+    <div class="nes-container m-4">
       <div class="nes-container is-centered mating-container">
         <%= image_tag "pingochi_cleaning.gif" %>
       </div>
@@ -14,7 +21,7 @@
       <p>XP: <%=@pingochi1.speed_skill + @pingochi1.strength_skill + @pingochi1.inteligence_skill %></p>
     </div>
 
-    <div class="nes-container">
+    <div class="nes-container m-4">
       <div class="nes-container is-centered mating-container">
         <%= image_tag "pingochi_chill.gif" %>
       </div>
@@ -24,11 +31,15 @@
     </div>
   </div>
 
-  <button id="btn-love" class="nes-btn is-error">MatingS2</button>
-  <%= link_to "Love!", pingochi_couple_matings_path(@pingochi1, @pingochi2), id: "create-mating-btn", class: "d-none", method: "post" %>
+  <div class="row mt-4">
+    <button id="btn-love" class="nes-btn is-error">New Mating</button>
+    <%= link_to "Love!", pingochi_couple_matings_path(@pingochi1, @pingochi2), id: "create-mating-btn", class: "d-none", method: "post" %>
+  </div>
 </div>
+
   <div id="love" class="d-none">
     <div>
       <%= image_tag "penguin_love.gif", width: "600"  %>
+      <%= audio_tag "mating_sound.mp3", id: "audio-mating" %>
     </div>
   </div>
