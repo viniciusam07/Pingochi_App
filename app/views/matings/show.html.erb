@@ -1,12 +1,12 @@
 <div class="container2">
   <div>
-    <% if @mating.mating_status = true %>
+    <% if @mating.mating_status == true %>
       <h2> <span class="nes-text is-primary"><%= @pingochi1.name %></span> used the best pickup lines on <span class="nes-text is-error"><%= @pingochi2.name %></span><br><br></h2>
       <h2>And...<br></h2>
       <h1>It WORKED!<br><br></h1>
       <h2>What a charmer! Congratulations on forming a new couple!<br><br></h2>
       <i class="nes-icon is-large heart"></i>
-    <% else %>
+    <% elsif @mating.mating_status == false %>
       <h2> <span class="nes-text is-primary"><%= @pingochi1.name %></span> used the best pickup lines on <span class="nes-text is-primary"><%= @pingochi2.name %></span><br><br></h2>
       <h2>And...<br></h2>
       <h1>It's not very effective...<br><br></h1>
