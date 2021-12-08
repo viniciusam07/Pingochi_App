@@ -5,6 +5,8 @@
     <%= image_tag "pingochi_chick_chill.gif" %>
   <% elsif @pingochi.age.between?(5, 10) && @pingochi.sleep? == true %>
     <%= image_tag "pingochi_adult_sleep.gif" %>
+  <% elsif @pingochi.age.between?(5, 10) && @pingochi.energy == 20 %>
+    <%= image_tag "pingochi_cry.gif" %>
   <% elsif @pingochi.age.between?(5, 10) %>
     <%= image_tag "pingochi_chill.gif" %>
   <% end %>
