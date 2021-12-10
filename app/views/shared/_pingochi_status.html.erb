@@ -12,7 +12,7 @@
         <progress class="nes-progress is-error" value=<%=@pingochi.energy%> max="100"></progress>
       <% end %>
 
-    <p>Slepping: <%=@pingochi.sleep?%></p>
+    <p>Sleeping: <%=@pingochi.sleep?%></p>
     <% if @pingochi.slept_at != nil %>
       <p>Last Sleep: <%=@pingochi.slept_at.strftime("%m-%e-%y %H:%M")%></p>
     <% else %>
